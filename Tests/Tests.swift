@@ -16,8 +16,8 @@ class Tests: XCTestCase {
     func testStart() {
         rdcConfig = [
             "host": RDCHost.dev,
-            "gameId": "G31n2c4a21345678ffa1cc2b452f118aa",
-            "apiKey": "SSABC123456789XXX"
+            "gameId": "<GAME ID>",
+            "apiKey": "<API KEY>"
         ]
 
         do {
