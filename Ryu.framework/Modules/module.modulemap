@@ -1,0 +1,11 @@
+framework module Ryu {
+  umbrella header "Ryu.h"
+
+  export *
+  module * { export * }
+}
+
+module Ryu.Swift {
+    header "Ryu-Swift.h"
+    requires objc
+}
