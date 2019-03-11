@@ -45,7 +45,7 @@ SPEC CHECKSUMS:
   Particles: c3bfe3d0c52cb46be509c327dc1b39e9ed210297
   PromisesObjC: 7b28ddd1e78cce8f80f1ada927d2217663a9c672
   PromisesSwift: b27f410f9ea693753cfd4cfd8ac1c60a471f137b
-  Ryu: d61cc421f4a268814cc214d51c6279232881a3dc
+  Ryu: 73190ae93e749c581b85864f98e90d8c2d198308
   RyuCrypto: 4395cd6eba1e291c5ad6b819feb73bc35cdd9402
   Socket.IO-Client-Swift: 79f8f85fa44881838175a20f9bd2c32bef2c9d37
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
