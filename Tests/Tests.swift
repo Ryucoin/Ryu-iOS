@@ -21,6 +21,7 @@ class Tests: XCTestCase {
         ]
         do {
             try rdcStart()
+            print("Started RDC")
         } catch RDCError.InvalidJSON {
             XCTFail("Invalid RDC json")
         } catch {
