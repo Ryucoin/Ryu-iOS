@@ -19,6 +19,7 @@ class Tests: XCTestCase {
             "gameId": "G31n2c4a21345678ffa1cc2b452f118aa",
             "apiKey": "SSABC123456789XXX"
         ]
+
         do {
             try rdcStart()
             print("Started RDC")
