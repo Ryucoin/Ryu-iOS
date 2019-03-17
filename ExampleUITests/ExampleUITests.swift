@@ -32,6 +32,7 @@ class ExampleUITests: XCTestCase {
                 let button = alert.buttons["Allow"]
                 if button.exists {
                     button.tap()
+                    sleep(2)
                 }
             }
         }
