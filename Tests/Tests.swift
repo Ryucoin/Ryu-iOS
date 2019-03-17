@@ -29,4 +29,20 @@ class Tests: XCTestCase {
             XCTFail("Unknown error with RDC Config")
         }
     }
+
+    func testStartFail() {
+        rdcConfig = [
+            "host": RDCHost.dev,
+            "gameId": "<GAME ID>",
+        ]
+
+        do {
+            try rdcStart()
+            print("Started RDC")
+        } catch RDCError.InvalidJSON {
+            print("Invalid RDC json")
+        } catch {
+            XCTFail("Unknown error with RDC Config")
+        }
+    }
 }
