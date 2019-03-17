@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Ryu_Tests.xctest"
-               BlueprintName = "Ryu_Tests"
+               BlueprintIdentifier = "7F22766322371971004E32D4"
+               BuildableName = "Example.app"
+               BlueprintName = "Example"
                ReferencedContainer = "container:Ryu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Ryu_Tests.xctest"
-               BlueprintName = "Ryu_Tests"
+               BlueprintIdentifier = "7F22767622371973004E32D4"
+               BuildableName = "ExampleUITests.xctest"
+               BlueprintName = "ExampleUITests"
                ReferencedContainer = "container:Ryu.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Ryu_Example.app"
-            BlueprintName = "Ryu_Example"
+            BlueprintIdentifier = "7F22766322371971004E32D4"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:Ryu.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,15 +62,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACE41AFB9204008FA782"
-            BuildableName = "Ryu_Tests.xctest"
-            BlueprintName = "Ryu_Tests"
+            BlueprintIdentifier = "7F22766322371971004E32D4"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:Ryu.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,6 +81,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7F22766322371971004E32D4"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:Ryu.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

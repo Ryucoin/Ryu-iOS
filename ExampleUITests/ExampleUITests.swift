@@ -27,9 +27,15 @@ class ExampleUITests: XCTestCase {
         if ok.exists {
             ok.tap()
             sleep(2)
-            app.alerts["“Example” Would Like to Send You Notifications"].buttons["Allow"].tap()
+            let alert = app.alerts["“Example” Would Like to Send You Notifications"]
+            if alert.exists {
+                let button = alert.buttons["Allow"]
+                if button.exists {
+                    button.tap()
+                }
+            }
         }
-        
+
         app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 4).staticTexts["Play now"].tap()
         sleep(2)
     }
