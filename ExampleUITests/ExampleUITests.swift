@@ -23,6 +23,13 @@ class ExampleUITests: XCTestCase {
         let app = XCUIApplication()
         app.buttons["Button"].tap()
         sleep(2)
+        let ok = app.buttons["OK"]
+        if ok.exists {
+            ok.tap()
+            sleep(2)
+            app.alerts["“Example” Would Like to Send You Notifications"].buttons["Allow"].tap()
+        }
+        
         app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 4).staticTexts["Play now"].tap()
         sleep(2)
     }
