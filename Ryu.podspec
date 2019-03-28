@@ -10,13 +10,13 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/_ryugames'
 
   s.ios.deployment_target = '12.1'
-  s.swift_version = '4.2'
+  s.swift_version = '5'
 
   s.vendored_frameworks = 'Ryu.framework'
 
-  s.dependency 'Socket.IO-Client-Swift'
-  s.dependency 'NetworkUtils'
-  s.dependency 'lottie-ios'
-  s.dependency 'Particles'
-  s.dependency 'neovmUtils'
+  s.dependency 'Socket.IO-Client-Swift', '14.0.0'
+  s.dependency 'NetworkUtils', '0.3.0'
+  s.dependency 'lottie-ios', '3.0.3'
+  s.dependency 'Particles', '0.2.0'
+  s.dependency 'neovmUtils', '0.4.0'
 end
