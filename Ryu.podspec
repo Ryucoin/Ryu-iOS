@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '1.0.7'
+  s.version          = '1.0.8'
   s.summary          = 'SDK for developers to interact with the Ryu Ecosystem.'
 
   s.homepage         = 'https://github.com/Ryucoin/Ryu-iOS'
@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.dependency 'NetworkUtils', '0.3.0'
   s.dependency 'lottie-ios', '3.0.3'
   s.dependency 'Particles', '0.2.0'
-  s.dependency 'neovmUtils', '0.4.1'
+  s.dependency 'neovmUtils', '0.4.2'
 end
