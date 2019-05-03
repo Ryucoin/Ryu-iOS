@@ -14,7 +14,7 @@
 		7F22766E22371973004E32D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F22766D22371973004E32D4 /* Assets.xcassets */; };
 		7F22767122371973004E32D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F22766F22371973004E32D4 /* LaunchScreen.storyboard */; };
 		7F22767C22371973004E32D4 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F22767B22371973004E32D4 /* ExampleUITests.swift */; };
-		7FD9B218227B799A000D01FC /* Ryu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD9B217227B799A000D01FC /* Ryu.framework */; };
+		7FC55D7E227BF8C600819F34 /* Ryu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC55D7D227BF8C600819F34 /* Ryu.framework */; };
 		D36438A3DE0E268A2CDCCFFC /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EEE5BDA0611572C198D223 /* Pods_Example.framework */; };
 		D431835D297FA76EC81425A3 /* Pods_Ryu_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1265D9662C7C7B2CB4CA0590 /* Pods_Ryu_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -49,7 +49,7 @@
 		7F22767722371973004E32D4 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F22767B22371973004E32D4 /* ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
 		7F22767D22371973004E32D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FD9B217227B799A000D01FC /* Ryu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ryu.framework; sourceTree = "<group>"; };
+		7FC55D7D227BF8C600819F34 /* Ryu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ryu.framework; sourceTree = "<group>"; };
 		AF98726BD3A9880BEA3D9269 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D3F1BAD8E27793C2F7A01374 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F33018ADC51B7EE59D0940E5 /* Pods-Ryu_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ryu_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ryu_Tests/Pods-Ryu_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D431835D297FA76EC81425A3 /* Pods_Ryu_Tests.framework in Frameworks */,
-				7FD9B218227B799A000D01FC /* Ryu.framework in Frameworks */,
+				7FC55D7E227BF8C600819F34 /* Ryu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 		3A83ED803A1626E1CE938833 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7FD9B217227B799A000D01FC /* Ryu.framework */,
+				7FC55D7D227BF8C600819F34 /* Ryu.framework */,
 				1265D9662C7C7B2CB4CA0590 /* Pods_Ryu_Tests.framework */,
 				16EEE5BDA0611572C198D223 /* Pods_Example.framework */,
 			);
