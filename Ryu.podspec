@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Ryu.framework'
 
   s.dependency 'Socket.IO-Client-Swift', '14.0.0'
-  s.dependency 'NetworkUtils', '0.3.0'
+  s.dependency 'NetworkUtils', '0.3.1'
   s.dependency 'lottie-ios', '3.0.3'
   s.dependency 'Particles', '0.2.0'
   s.dependency 'neovmUtils', '0.4.3'
