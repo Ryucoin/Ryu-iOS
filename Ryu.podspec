@@ -14,8 +14,6 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = 'Ryu.framework'
 
-  s.dependency 'NetworkUtils', '0.3.1'
   s.dependency 'lottie-ios', '3.0.3'
-  s.dependency 'Particles', '0.2.0'
-  s.dependency 'neovmUtils', '1.0.1'
+  s.dependency 'neovmUtils', '~> 1.2.1'
 end
