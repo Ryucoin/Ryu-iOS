@@ -6,5 +6,5 @@ target 'Ryu_Tests' do
 end
 
 target 'Example' do
-    pod 'Ryu', :path => './'
+  pod 'Ryu', :path => './'
 end
