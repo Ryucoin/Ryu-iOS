@@ -9,7 +9,7 @@ PODS:
   - PromisesObjC (1.2.8)
   - PromisesSwift (1.2.8):
     - PromisesObjC (= 1.2.8)
-  - Ryu (1.3.2):
+  - Ryu (1.3.3):
     - lottie-ios (= 3.0.3)
     - neovmUtils (~> 1.2.1)
   - RyuCrypto (0.0.1)
@@ -41,7 +41,7 @@ SPEC CHECKSUMS:
   NetworkUtils: b6decb8fd8f4d5361a24bdf8965a540eeed946cd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
-  Ryu: 49fab352ef7fda9ea0bed466b7005519ba1832d3
+  Ryu: e3d1ee094d660fb0c2b05f9ddd113feed3ded541
   RyuCrypto: 4395cd6eba1e291c5ad6b819feb73bc35cdd9402
   Socket.IO-Client-Swift: 21e6a8a23a7d367d5ddfab6cbbd3c679cf3c25d6
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
