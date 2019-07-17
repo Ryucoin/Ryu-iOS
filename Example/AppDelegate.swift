@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rdcConfig = [
             "host": RDCHost.dev,
             "gameId": "<GAME ID>",
-            "apiKey": "<API KEY>"
+            "apiKey": "<API KEY>",
+            "rdcMode": RDCMode.TournamentsAndClassic,
         ]
 
         do {
