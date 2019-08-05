@@ -6,7 +6,7 @@ width="128px;">
 
 <h1 align="center">Ryu-iOS</h1>
 <p align="center">
-SDK for developers to interact with the Ryu Ecosystem
+SDK for developers to use Ryu in iOS games
 </p>
 
 [![Build Status](https://travis-ci.com/Ryucoin/Ryu-iOS.svg?branch=master)](https://travis-ci.com/Ryucoin/Ryu-iOS)
