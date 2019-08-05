@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'UNLICENSED', :file => 'LICENSE' }
   s.author           = { 'Wyatt Mufson' => 'wyatt@ryucoin.com' }
   s.source           = { :git => 'https://github.com/Ryucoin/Ryu-iOS.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/_ryugames'
+  s.social_media_url = 'https://twitter.com/@_RyuGames'
 
   s.ios.deployment_target = '12.1'
   s.swift_version = '5'
