@@ -6,7 +6,7 @@ PODS:
     - Socket.IO-Client-Swift (= 14.0.0)
   - NetworkUtils (0.6.0):
     - SwiftPromises (= 0.1.0)
-  - Ryu (1.5.7):
+  - Ryu (1.5.8):
     - lottie-ios (= 3.0.3)
     - neovmUtils (= 1.5.1)
   - RyuCrypto (0.0.1)
@@ -36,7 +36,7 @@ SPEC CHECKSUMS:
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
   neovmUtils: f476145d0e51b35beac3162b7f43fe5f71dfe8ba
   NetworkUtils: 104aee9cdb21c77f5753b7fe7e4b5e158f07950f
-  Ryu: 20bb16daa69602a4f8f64b17b15e595cdb1b2a5a
+  Ryu: 8db056c049ac9fcf7c9c79f93eeb139d10d185f5
   RyuCrypto: 4395cd6eba1e291c5ad6b819feb73bc35cdd9402
   Socket.IO-Client-Swift: 21e6a8a23a7d367d5ddfab6cbbd3c679cf3c25d6
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
