@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '1.6.0'
+  s.version          = '1.6.1'
   s.summary          = 'SDK for developers to interact with the Ryu Ecosystem.'
 
   s.homepage         = 'https://github.com/Ryucoin/Ryu-iOS'
@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Ryu.framework'
 
   s.dependency 'lottie-ios', '3.0.3'
-  s.dependency 'neovmUtils', '1.5.1'
+  s.dependency 'neovmUtils', '1.5.7'
 end
