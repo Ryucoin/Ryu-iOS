@@ -1,14 +1,21 @@
 PODS:
   - lottie-ios (3.0.3)
-  - neovmUtils (1.5.7):
-    - NetworkUtils (= 0.6.0)
+  - neovmUtils (1.5.9):
+    - NetworkUtils (= 0.6.1)
     - RyuCrypto (= 0.0.1)
     - Socket.IO-Client-Swift (= 14.0.0)
-  - NetworkUtils (0.6.0):
+  - NetworkUtils (0.6.1):
     - SwiftPromises (= 0.1.0)
+  - PhoneNumberKit (3.0.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.0.0)
+    - PhoneNumberKit/UIKit (= 3.0.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.0.0)
+  - PhoneNumberKit/UIKit (3.0.0):
+    - PhoneNumberKit/PhoneNumberKitCore
   - Ryu (1.6.9):
     - lottie-ios (= 3.0.3)
-    - neovmUtils (= 1.5.7)
+    - neovmUtils (= 1.5.9)
+    - PhoneNumberKit (= 3.0)
   - RyuCrypto (0.0.1)
   - Socket.IO-Client-Swift (14.0.0):
     - Starscream (~> 3.0.6)
@@ -23,6 +30,7 @@ SPEC REPOS:
     - lottie-ios
     - neovmUtils
     - NetworkUtils
+    - PhoneNumberKit
     - RyuCrypto
     - Socket.IO-Client-Swift
     - Starscream
@@ -34,9 +42,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
-  neovmUtils: 4da03945bf8486f76a704f65cc1936965f9d8d99
-  NetworkUtils: 104aee9cdb21c77f5753b7fe7e4b5e158f07950f
-  Ryu: d086e5fe193d5d6a4fa40254aa9880f19284d245
+  neovmUtils: 8ee9325db0df63cd1768f2800ccbb821c810cad1
+  NetworkUtils: 4a0091f2334f11e25b9649500bac640ece0d9b91
+  PhoneNumberKit: 86019c972ef6904bcad11b46a6b8a91184d51117
+  Ryu: 4d6a6a904609c38dcf38dbbe293a2b55f8e4556d
   RyuCrypto: 4395cd6eba1e291c5ad6b819feb73bc35cdd9402
   Socket.IO-Client-Swift: 21e6a8a23a7d367d5ddfab6cbbd3c679cf3c25d6
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
