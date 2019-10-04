@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Ryu.framework'
 
   s.dependency 'lottie-ios', '3.0.3'
-  s.dependency 'neovmUtils', '1.5.9'
+  s.dependency 'neovmUtils', '1.7.0'
   s.dependency 'PhoneNumberKit', '3.0'
 end

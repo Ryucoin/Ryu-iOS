@@ -1,11 +1,10 @@
 PODS:
   - lottie-ios (3.0.3)
-  - neovmUtils (1.5.9):
-    - NetworkUtils (= 0.6.1)
+  - neovmUtils (1.7.0):
+    - NetworkUtils (= 1.0.0)
     - RyuCrypto (= 0.0.1)
-    - Socket.IO-Client-Swift (= 14.0.0)
-  - NetworkUtils (0.6.1):
-    - SwiftPromises (= 0.1.0)
+  - NetworkUtils (1.0.0):
+    - SwiftPromises (= 1.0.1)
   - PhoneNumberKit (3.0.0):
     - PhoneNumberKit/PhoneNumberKitCore (= 3.0.0)
     - PhoneNumberKit/UIKit (= 3.0.0)
@@ -14,26 +13,21 @@ PODS:
     - PhoneNumberKit/PhoneNumberKitCore
   - Ryu (1.6.16):
     - lottie-ios (= 3.0.3)
-    - neovmUtils (= 1.5.9)
+    - neovmUtils (= 1.7.0)
     - PhoneNumberKit (= 3.0)
   - RyuCrypto (0.0.1)
-  - Socket.IO-Client-Swift (14.0.0):
-    - Starscream (~> 3.0.6)
-  - Starscream (3.0.6)
-  - SwiftPromises (0.1.0)
+  - SwiftPromises (1.0.1)
 
 DEPENDENCIES:
   - Ryu (from `./`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - lottie-ios
     - neovmUtils
     - NetworkUtils
     - PhoneNumberKit
     - RyuCrypto
-    - Socket.IO-Client-Swift
-    - Starscream
     - SwiftPromises
 
 EXTERNAL SOURCES:
@@ -42,14 +36,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
-  neovmUtils: 8ee9325db0df63cd1768f2800ccbb821c810cad1
-  NetworkUtils: 4a0091f2334f11e25b9649500bac640ece0d9b91
+  neovmUtils: 0a8b81c691b5ea314155404de5de7aa05ce62a78
+  NetworkUtils: 09ce7a4abb4916c7458f8861fe12c4869ef3e284
   PhoneNumberKit: 86019c972ef6904bcad11b46a6b8a91184d51117
-  Ryu: fa4ea2f3b3ef2c77c9ebb140732c16c319906f2a
+  Ryu: d014966c398bebcf4dea0a9e2496714b6e054fe2
   RyuCrypto: 4395cd6eba1e291c5ad6b819feb73bc35cdd9402
-  Socket.IO-Client-Swift: 21e6a8a23a7d367d5ddfab6cbbd3c679cf3c25d6
-  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
-  SwiftPromises: e982eaeb247ae9a0a510e2a93859d1da10cca659
+  SwiftPromises: 8c7a2930dafb459e679af48ea667cc067fba9692
 
 PODFILE CHECKSUM: c8f89b393f0bf2361c43fb08a8d9baf6f427ad1a
 
