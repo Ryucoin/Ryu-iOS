@@ -1,5 +1,5 @@
 use_frameworks!
-platform :ios, '12.1'
+platform :ios, '12.0'
 
 target 'Ryu_Tests' do
   pod 'Ryu', :path => './'

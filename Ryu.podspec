@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '1.7.1'
+  s.version          = '1.7.2'
   s.summary          = 'SDK for developers to interact with the Ryu Ecosystem.'
 
   s.homepage         = 'https://github.com/Ryucoin/Ryu-iOS'
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Wyatt Mufson' => 'wyatt@ryucoin.com' }
   s.source           = { :git => 'https://github.com/Ryucoin/Ryu-iOS.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '12.1'
+  s.ios.deployment_target = '12.0'
   s.swift_version = '5.1'
 
   s.vendored_frameworks = 'Ryu.framework'
