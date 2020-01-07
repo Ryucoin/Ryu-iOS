@@ -1,0 +1,195 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Ryu
+import AVFoundation
+import CommonCrypto
+import CoreLocation
+import Foundation
+import GameKit
+import LocalAuthentication
+import Lottie
+import NetworkUtils
+import PassKit
+import PhoneNumberKit
+import QuartzCore
+@_exported import Ryu
+import SafariServices
+import StoreKit
+import Swift
+import SwiftPromises
+import UIKit
+import UserNotifications
+import WebKit
+import neovmUtils
+@objc final public class RDCViewController : UIKit.UIViewController {
+  @objc override final public func viewDidLoad()
+  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public var rdcConfig: [Swift.String : Any]
+public var rdcMatchId: Swift.String? {
+  get
+}
+public var rdcCurrentUser: Swift.String? {
+  get
+}
+public enum RDCError : Swift.Error {
+  case None
+  case ParsingError
+  case InvalidJSON
+  case NetworkError
+  case NoUsernameError
+  case InvalidParams
+  case BlockchainOutage
+  public static func == (a: Ryu.RDCError, b: Ryu.RDCError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum RDCMode {
+  case TournamentsOnly
+  case TournamentsAndClassic
+  case UnityGame
+  public static func == (a: Ryu.RDCMode, b: Ryu.RDCMode) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public var rdcOrientationMask: UIKit.UIInterfaceOrientationMask
+public let rdcLandscape: UIKit.UIInterfaceOrientationMask
+public let rdcPortrait: UIKit.UIInterfaceOrientationMask
+public let rdcAllButUpsideDown: UIKit.UIInterfaceOrientationMask
+public let rdcAllOrientations: UIKit.UIInterfaceOrientationMask
+public enum RDCHost : Swift.String {
+  case prod
+  case dev
+  case sandbox
+  case local
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+}
+public enum BackgroundAnimation {
+  case None
+  case Circles
+  public static func == (a: Ryu.BackgroundAnimation, b: Ryu.BackgroundAnimation) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public func rdcStart() throws
+public func rdcStop()
+public func rdcResume()
+public func rdcStoreToken(deviceToken: Foundation.Data)
+public func rdcSignInFromURL(_ url: Foundation.URL, _ delegate: UIKit.UIApplicationDelegate)
+public func rdcSegueToRyu(_ viewController: UIKit.UIViewController)
+public func rdcStartTimedGame(lengthOfGame: Swift.Double, interval: Swift.Double = 1.0, completion: @escaping (Swift.Double, Swift.Bool) -> ())
+public func rdcPauseTimedGame()
+public func rdcResumeTimedGame(completion: @escaping (Swift.Double, Swift.Bool) -> ())
+public func rdcCachePut<T>(key: Swift.String = "", obj: T) -> Swift.Bool where T : Swift.Encodable
+public func rdcCacheGet<T>(key: Swift.String = "", type: T.Type) -> T? where T : Swift.Decodable
+public func rdcCacheDelete(key: Swift.String = "")
+@objc public class RDCTurnBasedGame : ObjectiveC.NSObject, Swift.Codable {
+  public var scores: [Swift.String : Swift.Int]
+  public var currentPlayer: Swift.String
+  public init(scores: [Swift.String : Swift.Int], currentPlayer: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public class RDCTimedGame : ObjectiveC.NSObject, Swift.Codable {
+  public var timeRemaining: Swift.Double
+  public var score: Swift.Int
+  public init(timeRemaining: Swift.Double, score: Swift.Int)
+  @objc override dynamic public init()
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public enum rdcRandomTag : Swift.Int {
+  case one
+  case two
+  case three
+  case four
+  case five
+  case six
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public func rdcGetRandomInt(min: Swift.Int, max: Swift.Int, _ tag: Ryu.rdcRandomTag = .one) -> Swift.Int
+public func rdcGetRandomFloat(min: Swift.Float, max: Swift.Float, _ tag: Ryu.rdcRandomTag = .one) -> Swift.Float
+extension Array {
+  public func rdcRandomElement(_ tag: Ryu.rdcRandomTag = .one) -> Any
+}
+public enum RDCBackgroundStyle {
+  case light, regular, dark
+  public static func == (a: Ryu.RDCBackgroundStyle, b: Ryu.RDCBackgroundStyle) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum RDCGradientDirection {
+  case leftToRight
+  case rightToLeft
+  case TopToBottom
+  case BottomToTop
+  case TopLeftToBottomRight
+  case BottomRightToTopLeft
+  case TopRightToBottomLeft
+  case BottomLeftToTopRight
+  public static func == (a: Ryu.RDCGradientDirection, b: Ryu.RDCGradientDirection) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public func rdcExitMatch(_ viewController: UIKit.UIViewController)
+public var isRyuMatch: Swift.Bool {
+  get
+}
+public var isRyuTutorial: Swift.Bool
+public enum RDCSubmissionType : Swift.String {
+  case highestWins
+  case lowestWins
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public func rdcSubmitScore(_ viewController: UIKit.UIViewController, score: Swift.Int, _ customSubmittingView: UIKit.UIView? = nil, submissionType: Ryu.RDCSubmissionType = .highestWins, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+public func rdcForceLogout()
+public struct RDCApplePayConfig : Swift.Codable {
+  public var devId: Swift.String
+  public var prodId: Swift.String
+  public init(devId: Swift.String, prodId: Swift.String)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension Ryu.RDCError : Swift.Hashable {}
+extension Ryu.RDCMode : Swift.Hashable {}
+extension Ryu.RDCHost : Swift.Hashable {}
+extension Ryu.RDCHost : Swift.RawRepresentable {}
+extension Ryu.BackgroundAnimation : Swift.Equatable {}
+extension Ryu.BackgroundAnimation : Swift.Hashable {}
+extension Ryu.rdcRandomTag : Swift.Equatable {}
+extension Ryu.rdcRandomTag : Swift.Hashable {}
+extension Ryu.rdcRandomTag : Swift.RawRepresentable {}
+extension Ryu.RDCBackgroundStyle : Swift.Hashable {}
+extension Ryu.RDCGradientDirection : Swift.Equatable {}
+extension Ryu.RDCGradientDirection : Swift.Hashable {}
+extension Ryu.RDCSubmissionType : Swift.Equatable {}
+extension Ryu.RDCSubmissionType : Swift.Hashable {}
+extension Ryu.RDCSubmissionType : Swift.RawRepresentable {}

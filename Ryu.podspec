@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '1.8.0'
+  s.version          = '1.8.1'
   s.summary          = 'SDK for developers to interact with the Ryu Ecosystem.'
 
   s.homepage         = 'https://github.com/Ryucoin/Ryu-iOS'
