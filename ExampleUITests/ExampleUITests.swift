@@ -3,7 +3,7 @@
 //  ExampleUITests
 //
 //  Created by Wyatt Mufson on 3/11/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
+//  Copyright © 2020 Ryu Blockchain Technologies. All rights reserved.
 //
 
 import XCTest

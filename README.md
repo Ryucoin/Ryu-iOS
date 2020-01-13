@@ -9,7 +9,7 @@ width="128px;">
 SDK for developers to use Ryu in iOS games
 </p>
 
-[![Build Status](https://travis-ci.com/Ryucoin/Ryu-iOS.svg?branch=master)](https://travis-ci.com/Ryucoin/Ryu-iOS)
+[![Build Status](https://travis-ci.com/RyuGames/Ryu-iOS.svg?branch=master)](https://travis-ci.com/RyuGames/Ryu-iOS)
 [![Version](https://img.shields.io/cocoapods/v/Ryu.svg?style=flat)](https://cocoapods.org/pods/Ryu)
 [![License](https://img.shields.io/cocoapods/l/Ryu.svg?style=flat)](./LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/Ryu.svg?style=flat)](https://cocoapods.org/pods/Ryu)
