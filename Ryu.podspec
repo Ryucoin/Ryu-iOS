@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '1.8.3'
-  s.summary          = 'SDK for developers to interact with the Ryu Ecosystem.'
+  s.version          = '2.0.0'
+  s.summary          = 'Ryu Games iOS SDK'
 
   s.homepage         = 'https://github.com/RyuGames/Ryu-iOS'
   s.license          = { :type => 'UNLICENSED', :file => 'LICENSE' }
