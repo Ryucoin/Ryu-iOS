@@ -11,7 +11,7 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (3.0.0)
   - PhoneNumberKit/UIKit (3.0.0):
     - PhoneNumberKit/PhoneNumberKitCore
-  - Ryu (2.0.1):
+  - Ryu (2.0.2):
     - lottie-ios (= 3.0.3)
     - neovmUtils (= 1.8.0)
     - PhoneNumberKit (= 3.0)
@@ -39,7 +39,7 @@ SPEC CHECKSUMS:
   neovmUtils: f66b652fef9bc2ecca08f292faa05ad34c96c520
   NetworkUtils: 98e59b40bcd0cb1c2ecf6f12e66348c2d068b588
   PhoneNumberKit: 86019c972ef6904bcad11b46a6b8a91184d51117
-  Ryu: 2e3cd9f896d25e0737053eb62e0defb2373b037d
+  Ryu: 193d713949ca8761b922a2d1fad59c9d49076c47
   RyuCrypto: 4395cd6eba1e291c5ad6b819feb73bc35cdd9402
   SwiftPromises: 791aca45ea7a946f5d30163d70fc65a55e96c688
 
