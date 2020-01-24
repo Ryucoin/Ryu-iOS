@@ -24,6 +24,8 @@ import UserNotifications
 import WebKit
 import neovmUtils
 public class GameAnalyticsManager {
+  public func addProgressionEvent(with progression: GameAnalytics.GAProgressionStatus, progression01: Swift.String, progression02: Swift.String?, progression03: Swift.String?)
+  public func addDesignEvent(withEventId eventId: Swift.String, _ value: Foundation.NSNumber? = nil)
   @objc deinit
 }
 @objc final public class RDCViewController : UIKit.UIViewController {
@@ -63,6 +65,7 @@ public enum RDCMode {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
+public let rdcGameAnalyticsManager: Ryu.GameAnalyticsManager
 public var rdcOrientationMask: UIKit.UIInterfaceOrientationMask
 public let rdcLandscape: UIKit.UIInterfaceOrientationMask
 public let rdcPortrait: UIKit.UIInterfaceOrientationMask
