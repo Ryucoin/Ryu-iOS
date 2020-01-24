@@ -23,6 +23,9 @@ import UIKit
 import UserNotifications
 import WebKit
 import neovmUtils
+public class GameAnalyticsManager {
+  @objc deinit
+}
 @objc final public class RDCViewController : UIKit.UIViewController {
   @objc override final public func viewDidLoad()
   @objc override final public func viewWillAppear(_ animated: Swift.Bool)
