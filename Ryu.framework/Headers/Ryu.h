@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GameAnalytics/GameAnalytics.h"
+#import "FBSDKCoreKit/FBSDKCoreKit.h"
 
 //! Project version number for Ryu.
 FOUNDATION_EXPORT double RyuVersionNumber;
