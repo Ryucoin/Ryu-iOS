@@ -5,6 +5,7 @@ import AVFoundation
 import CommonCrypto
 import ContactsUI
 import CoreLocation
+import FBSDKCoreKit
 import Foundation
 import GameKit
 import LocalAuthentication
@@ -66,6 +67,7 @@ public enum RDCMode {
   public func hash(into hasher: inout Swift.Hasher)
 }
 public let rdcGameAnalyticsManager: Ryu.GameAnalyticsManager
+public let rdcFacebookAnalyticsManager: Ryu.FacebookAnalyticsManager
 public var rdcOrientationMask: UIKit.UIInterfaceOrientationMask
 public let rdcLandscape: UIKit.UIInterfaceOrientationMask
 public let rdcPortrait: UIKit.UIInterfaceOrientationMask
@@ -178,6 +180,10 @@ public enum RDCSubmissionType : Swift.String {
 }
 public func rdcSubmitScore(_ viewController: UIKit.UIViewController, score: Swift.Int, _ customSubmittingView: UIKit.UIView? = nil, submissionType: Ryu.RDCSubmissionType = .highestWins, completion: ((Swift.Bool) -> Swift.Void)? = nil)
 public func rdcForceLogout()
+public class FacebookAnalyticsManager {
+  public func logEvent(name: Swift.String)
+  @objc deinit
+}
 public struct RDCApplePayConfig : Swift.Codable {
   public var devId: Swift.String
   public var prodId: Swift.String
