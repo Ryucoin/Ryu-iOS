@@ -186,6 +186,9 @@ public class FacebookAnalyticsManager {
   public func logEvent(name: Swift.String)
   @objc deinit
 }
+public protocol MessageCellDelegate {
+  func messageTapped(indexPath: Foundation.IndexPath)
+}
 public struct RDCApplePayConfig : Swift.Codable {
   public var devId: Swift.String
   public var prodId: Swift.String
