@@ -19,7 +19,7 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (3.0.0)
   - PhoneNumberKit/UIKit (3.0.0):
     - PhoneNumberKit/PhoneNumberKitCore
-  - Ryu (2.3.1):
+  - Ryu (2.3.2):
     - FBSDKCoreKit (= 5.15.0)
     - GA-SDK-IOS (= 2.2.18)
     - KochavaTrackeriOS (= 3.13.0)
@@ -56,7 +56,7 @@ SPEC CHECKSUMS:
   neovmUtils: f66b652fef9bc2ecca08f292faa05ad34c96c520
   NetworkUtils: 98e59b40bcd0cb1c2ecf6f12e66348c2d068b588
   PhoneNumberKit: 86019c972ef6904bcad11b46a6b8a91184d51117
-  Ryu: 366a27f4eb71e40f61b2b9e597fc45c030adeb1a
+  Ryu: 96f93738947fae788c01314b922460191b574b73
   RyuCrypto: 4395cd6eba1e291c5ad6b819feb73bc35cdd9402
   SwiftPromises: 791aca45ea7a946f5d30163d70fc65a55e96c688
 
