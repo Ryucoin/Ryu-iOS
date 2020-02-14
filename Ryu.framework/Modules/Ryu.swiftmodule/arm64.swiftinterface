@@ -45,6 +45,9 @@ public var rdcMatchId: Swift.String? {
 public var rdcCurrentUser: Swift.String? {
   get
 }
+public var rdcCurrentGameMode: Swift.String {
+  get
+}
 public enum RDCError : Swift.Error {
   case None
   case ParsingError
