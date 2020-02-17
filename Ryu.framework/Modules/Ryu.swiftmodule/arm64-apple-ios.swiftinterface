@@ -183,7 +183,7 @@ public enum RDCSubmissionType : Swift.String {
     get
   }
 }
-public func rdcSubmitScore(_ viewController: UIKit.UIViewController, score: Swift.Int, _ customSubmittingView: UIKit.UIView? = nil, submissionType: Ryu.RDCSubmissionType = .highestWins, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+public func rdcSubmitScore(_ viewController: UIKit.UIViewController, score: Swift.Int, _ customSubmittingView: UIKit.UIView? = nil, labelText: Swift.String = "Time's Up!", submissionType: Ryu.RDCSubmissionType = .highestWins, completion: ((Swift.Bool) -> Swift.Void)? = nil)
 public func rdcForceLogout()
 public class FacebookAnalyticsManager {
   public func logEvent(name: Swift.String)
