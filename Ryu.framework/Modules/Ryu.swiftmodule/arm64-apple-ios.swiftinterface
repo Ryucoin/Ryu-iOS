@@ -73,6 +73,7 @@ public enum RDCMode {
 }
 public let rdcGameAnalyticsManager: Ryu.GameAnalyticsManager
 public let rdcFacebookAnalyticsManager: Ryu.FacebookAnalyticsManager
+public let rdcKochavaTracker: KochavaTracker.KochavaTracker
 public var rdcOrientationMask: UIKit.UIInterfaceOrientationMask
 public let rdcLandscape: UIKit.UIInterfaceOrientationMask
 public let rdcPortrait: UIKit.UIInterfaceOrientationMask
@@ -186,7 +187,7 @@ public enum RDCSubmissionType : Swift.String {
 public func rdcSubmitScore(_ viewController: UIKit.UIViewController, score: Swift.Int, _ customSubmittingView: UIKit.UIView? = nil, labelText: Swift.String = "Time's Up!", submissionType: Ryu.RDCSubmissionType = .highestWins, completion: ((Swift.Bool) -> Swift.Void)? = nil)
 public func rdcForceLogout()
 public class FacebookAnalyticsManager {
-  public func logEvent(name: Swift.String)
+  public func logEvent(name: Swift.String, description: Swift.String)
   @objc deinit
 }
 public protocol MessageCellDelegate {
