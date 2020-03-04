@@ -108,9 +108,9 @@ public func rdcSegueToRyu(_ viewController: UIKit.UIViewController)
 public func rdcStartTimedGame(lengthOfGame: Swift.Double, interval: Swift.Double = 1.0, completion: @escaping (Swift.Double, Swift.Bool) -> ())
 public func rdcPauseTimedGame()
 public func rdcResumeTimedGame(completion: @escaping (Swift.Double, Swift.Bool) -> ())
-public func rdcCachePut<T>(key: Swift.String = "", obj: T) -> Swift.Bool where T : Swift.Encodable
-public func rdcCacheGet<T>(key: Swift.String = "", type: T.Type) -> T? where T : Swift.Decodable
-public func rdcCacheDelete(key: Swift.String = "")
+public func rdcCachePut<T>(key: Swift.String = "", obj: T, matchId: Swift.String? = rdcMatchId) -> Swift.Bool where T : Swift.Encodable
+public func rdcCacheGet<T>(key: Swift.String = "", type: T.Type, matchId: Swift.String? = rdcMatchId) -> T? where T : Swift.Decodable
+public func rdcCacheDelete(key: Swift.String = "", matchId: Swift.String? = rdcMatchId)
 @objc public class RDCTurnBasedGame : ObjectiveC.NSObject, Swift.Codable {
   public var scores: [Swift.String : Swift.Int]
   public var currentPlayer: Swift.String
