@@ -63,15 +63,6 @@ public enum RDCError : Swift.Error {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public enum RDCMode {
-  case TournamentsOnly
-  case UnityGame
-  public static func == (a: Ryu.RDCMode, b: Ryu.RDCMode) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
-}
 public let rdcGameAnalyticsManager: Ryu.GameAnalyticsManager
 public let rdcFacebookAnalyticsManager: Ryu.FacebookAnalyticsManager
 public let rdcKochavaTracker: KochavaTracker.KochavaTracker
@@ -109,9 +100,9 @@ public func rdcSegueToRyu(_ viewController: UIKit.UIViewController)
 public func rdcStartTimedGame(lengthOfGame: Swift.Double, interval: Swift.Double = 1.0, completion: @escaping (Swift.Double, Swift.Bool) -> ())
 public func rdcPauseTimedGame()
 public func rdcResumeTimedGame(completion: @escaping (Swift.Double, Swift.Bool) -> ())
-public func rdcCachePut<T>(key: Swift.String = "", obj: T, matchId: Swift.String? = rdcMatchId) -> Swift.Bool where T : Swift.Encodable
-public func rdcCacheGet<T>(key: Swift.String = "", type: T.Type, matchId: Swift.String? = rdcMatchId) -> T? where T : Swift.Decodable
-public func rdcCacheDelete(key: Swift.String = "", matchId: Swift.String? = rdcMatchId)
+public func rdcCachePut<T>(key: Swift.String = "", obj: T, matchId: Swift.String? = rdcMatchId, offline: Swift.Bool = false) -> Swift.Bool where T : Swift.Encodable
+public func rdcCacheGet<T>(key: Swift.String = "", type: T.Type, matchId: Swift.String? = rdcMatchId, offline: Swift.Bool = false) -> T? where T : Swift.Decodable
+public func rdcCacheDelete(key: Swift.String = "", matchId: Swift.String? = rdcMatchId, offline: Swift.Bool = false)
 @objc public class RDCTurnBasedGame : ObjectiveC.NSObject, Swift.Codable {
   public var scores: [Swift.String : Swift.Int]
   public var currentPlayer: Swift.String
@@ -201,8 +192,20 @@ public struct RDCApplePayConfig : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
+public struct OfflineOption : Swift.Equatable {
+  public var id: Swift.String
+  public var title: Swift.String
+  public var gameMode: Swift.String
+  public var rules: [Swift.String]
+  public var boxColor: Swift.String
+  public var textColor: Swift.String
+  public var buttonColor: Swift.String
+  public var buttonTextColor: Swift.String
+  public init(id: Swift.String, title: Swift.String, gameMode: Swift.String, rules: [Swift.String], boxColor: Swift.String, textColor: Swift.String, buttonColor: Swift.String, buttonTextColor: Swift.String)
+  public static func == (a: Ryu.OfflineOption, b: Ryu.OfflineOption) -> Swift.Bool
+}
+public func offlineDidScore(id: Swift.String, score: Swift.Int)
 extension Ryu.RDCError : Swift.Hashable {}
-extension Ryu.RDCMode : Swift.Hashable {}
 extension Ryu.RDCHost : Swift.Hashable {}
 extension Ryu.RDCHost : Swift.RawRepresentable {}
 extension Ryu.BackgroundAnimation : Swift.Equatable {}
