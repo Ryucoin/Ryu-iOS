@@ -43,6 +43,12 @@ public var rdcConfig: [Swift.String : Any]
 public var rdcMatchId: Swift.String? {
   get
 }
+public var rdcIsOfflineMatch: Swift.Bool {
+  get
+}
+public var rdcHighScoreForOfflineMatch: Swift.Int {
+  get
+}
 public var rdcCurrentUser: Swift.String? {
   get
 }
