@@ -18,6 +18,5 @@ Pod::Spec.new do |s|
   s.dependency 'PhoneNumberKit', '3.0'
   s.dependency 'GA-SDK-IOS', '2.2.18'
   s.dependency 'FBSDKCoreKit', '5.15.0'
-  s.dependency 'KochavaTrackeriOS', '3.13.0'
 
 end

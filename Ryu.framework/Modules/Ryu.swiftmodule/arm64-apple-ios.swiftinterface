@@ -10,7 +10,6 @@ import FBSDKCoreKit
 import Foundation
 import GameAnalytics
 import GameKit
-import KochavaTracker
 import LocalAuthentication
 import Lottie
 import MessageUI
@@ -71,7 +70,6 @@ public enum RDCError : Swift.Error {
 }
 public let rdcGameAnalyticsManager: Ryu.GameAnalyticsManager
 public let rdcFacebookAnalyticsManager: Ryu.FacebookAnalyticsManager
-public let rdcKochavaTracker: KochavaTracker.KochavaTracker
 public var rdcOrientationMask: UIKit.UIInterfaceOrientationMask
 public let rdcLandscape: UIKit.UIInterfaceOrientationMask
 public let rdcPortrait: UIKit.UIInterfaceOrientationMask
