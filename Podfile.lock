@@ -18,13 +18,15 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (3.0.0)
   - PhoneNumberKit/UIKit (3.0.0):
     - PhoneNumberKit/PhoneNumberKitCore
-  - Ryu (2.5.6):
+  - Ryu (2.6.0):
     - FBSDKCoreKit (= 5.15.0)
     - GA-SDK-IOS (= 2.2.18)
     - lottie-ios (= 3.0.3)
     - neovmUtils (= 1.8.0)
     - PhoneNumberKit (= 3.0)
+    - SquareInAppPaymentsSDK (= 1.3.0)
   - RyuCrypto (0.0.1)
+  - SquareInAppPaymentsSDK (1.3.0)
   - SwiftPromises (1.1.0)
 
 DEPENDENCIES:
@@ -39,6 +41,7 @@ SPEC REPOS:
     - NetworkUtils
     - PhoneNumberKit
     - RyuCrypto
+    - SquareInAppPaymentsSDK
     - SwiftPromises
 
 EXTERNAL SOURCES:
@@ -52,8 +55,9 @@ SPEC CHECKSUMS:
   neovmUtils: f66b652fef9bc2ecca08f292faa05ad34c96c520
   NetworkUtils: 98e59b40bcd0cb1c2ecf6f12e66348c2d068b588
   PhoneNumberKit: 86019c972ef6904bcad11b46a6b8a91184d51117
-  Ryu: eb1ed53cdfb4c5bf514e31a866bbf96c1e8d9112
+  Ryu: fdab1dbe8c65908daed848c5f085f7fde136c608
   RyuCrypto: 4395cd6eba1e291c5ad6b819feb73bc35cdd9402
+  SquareInAppPaymentsSDK: 0cc9fd96e99710a3158362dabb2577416cf8e379
   SwiftPromises: 791aca45ea7a946f5d30163d70fc65a55e96c688
 
 PODFILE CHECKSUM: 116e3353cd1dafbffdca051ba81aedd7e538f2c9
