@@ -19,6 +19,7 @@ import PhoneNumberKit
 import QuartzCore
 @_exported import Ryu
 import SafariServices
+import SquareInAppPaymentsSDK
 import StoreKit
 import Swift
 import SwiftPromises
