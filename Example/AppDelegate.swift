@@ -18,10 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         rdcConfig = [
-            "host": RDCHost.dev,
             "gameId": "<GAME ID>",
             "apiKey": "<API KEY>",
-            "rdcMode": RDCMode.TournamentsOnly,
         ]
 
         do {
