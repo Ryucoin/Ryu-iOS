@@ -19,8 +19,8 @@ import PhoneNumberKit
 import QuartzCore
 @_exported import Ryu
 import SafariServices
-import SquareInAppPaymentsSDK
 import StoreKit
+import Stripe
 import Swift
 import SwiftPromises
 import UIKit
@@ -76,17 +76,6 @@ public let rdcLandscape: UIKit.UIInterfaceOrientationMask
 public let rdcPortrait: UIKit.UIInterfaceOrientationMask
 public let rdcAllButUpsideDown: UIKit.UIInterfaceOrientationMask
 public let rdcAllOrientations: UIKit.UIInterfaceOrientationMask
-public enum RDCHost : Swift.String {
-  case prod
-  case dev
-  case sandbox
-  case local
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-  public init?(rawValue: Swift.String)
-}
 public enum BackgroundAnimation {
   case None
   case Circles
@@ -211,8 +200,6 @@ public struct OfflineOption : Swift.Equatable {
 }
 public func offlineDidScore(id: Swift.String, score: Swift.Int)
 extension Ryu.RDCError : Swift.Hashable {}
-extension Ryu.RDCHost : Swift.Hashable {}
-extension Ryu.RDCHost : Swift.RawRepresentable {}
 extension Ryu.BackgroundAnimation : Swift.Equatable {}
 extension Ryu.BackgroundAnimation : Swift.Hashable {}
 extension Ryu.rdcRandomTag : Swift.Equatable {}
