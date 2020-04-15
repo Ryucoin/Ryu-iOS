@@ -84,11 +84,12 @@ public enum RDCBackgroundAnimation {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public struct RDCGraident {
+public struct RDCGradient {
 }
 public struct RDCBackground {
 }
 public class RDCConfig {
+  public var isDebug: Swift.Bool
   public var disableFriends: Swift.Bool
   public var regularFont: Swift.String?
   public var boldFont: Swift.String?
@@ -107,7 +108,7 @@ public class RDCConfig {
   required public init(gameId: Swift.String, apiKey: Swift.String)
   @objc deinit
 }
-public func rdcStart(config: Ryu.RDCConfig) throws
+public func rdcStart(config: Ryu.RDCConfig)
 public func rdcStop()
 public func rdcResume()
 public func rdcStoreToken(deviceToken: Foundation.Data)
