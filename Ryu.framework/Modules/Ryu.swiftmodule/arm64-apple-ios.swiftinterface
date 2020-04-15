@@ -39,7 +39,6 @@ public class GameAnalyticsManager {
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-public var rdcConfig: [Swift.String : Any]
 public var rdcMatchId: Swift.String? {
   get
 }
@@ -76,16 +75,39 @@ public let rdcLandscape: UIKit.UIInterfaceOrientationMask
 public let rdcPortrait: UIKit.UIInterfaceOrientationMask
 public let rdcAllButUpsideDown: UIKit.UIInterfaceOrientationMask
 public let rdcAllOrientations: UIKit.UIInterfaceOrientationMask
-public enum BackgroundAnimation {
+public enum RDCBackgroundAnimation {
   case None
   case Circles
-  public static func == (a: Ryu.BackgroundAnimation, b: Ryu.BackgroundAnimation) -> Swift.Bool
+  public static func == (a: Ryu.RDCBackgroundAnimation, b: Ryu.RDCBackgroundAnimation) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public func rdcStart() throws
+public struct RDCGraident {
+}
+public struct RDCBackground {
+}
+public class RDCConfig {
+  public var disableFriends: Swift.Bool
+  public var regularFont: Swift.String?
+  public var boldFont: Swift.String?
+  public var italicizedFont: Swift.String?
+  public var background: Ryu.RDCBackground
+  public var backgroundAnimation: Ryu.RDCBackgroundAnimation
+  public var backgroundImage: UIKit.UIImage?
+  public var noGameTutorial: Swift.Bool?
+  public var noCache: Swift.Bool?
+  public var offlineOptions: [Ryu.OfflineOption]
+  public var loginButtonGradientColor: Swift.String?
+  public var orientation: UIKit.UIInterfaceOrientationMask
+  public var gameAnalyticsGameKey: Swift.String?
+  public var gameAnalyticsSecretKey: Swift.String?
+  public var forceLogs: Swift.Bool
+  required public init(gameId: Swift.String, apiKey: Swift.String)
+  @objc deinit
+}
+public func rdcStart(config: Ryu.RDCConfig) throws
 public func rdcStop()
 public func rdcResume()
 public func rdcStoreToken(deviceToken: Foundation.Data)
@@ -200,8 +222,8 @@ public struct OfflineOption : Swift.Equatable {
 }
 public func offlineDidScore(id: Swift.String, score: Swift.Int)
 extension Ryu.RDCError : Swift.Hashable {}
-extension Ryu.BackgroundAnimation : Swift.Equatable {}
-extension Ryu.BackgroundAnimation : Swift.Hashable {}
+extension Ryu.RDCBackgroundAnimation : Swift.Equatable {}
+extension Ryu.RDCBackgroundAnimation : Swift.Hashable {}
 extension Ryu.rdcRandomTag : Swift.Equatable {}
 extension Ryu.rdcRandomTag : Swift.Hashable {}
 extension Ryu.rdcRandomTag : Swift.RawRepresentable {}
