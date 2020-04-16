@@ -85,8 +85,15 @@ public enum RDCBackgroundAnimation {
   public func hash(into hasher: inout Swift.Hasher)
 }
 public struct RDCGradient {
+  public var direction: Ryu.RDCGradientDirection
+  public var colors: [Swift.String]
+  public init(direction: Ryu.RDCGradientDirection, colors: [Swift.String])
 }
 public struct RDCBackground {
+  public var gradient: Ryu.RDCGradient?
+  public var solidBackground: Swift.String?
+  public init(gradient: Ryu.RDCGradient)
+  public init(solidBackground: Swift.String)
 }
 public class RDCConfig {
   public var isDebug: Swift.Bool
