@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Ryu
 import AVFoundation
 import AdSupport
+import ChainUtils
 import CommonCrypto
 import ContactsUI
 import CoreLocation
@@ -26,7 +27,6 @@ import SwiftPromises
 import UIKit
 import UserNotifications
 import WebKit
-import neovmUtils
 public class GameAnalyticsManager {
   public func addProgressionEvent(with progression: GameAnalytics.GAProgressionStatus, progression01: Swift.String, progression02: Swift.String?, progression03: Swift.String?)
   public func addDesignEvent(withEventId eventId: Swift.String, _ value: Foundation.NSNumber? = nil)
