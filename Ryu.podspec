@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '2.8.6'
+  s.version          = '2.9.0'
   s.summary          = 'Ryu Games iOS SDK'
 
   s.homepage         = 'https://github.com/RyuGames/Ryu-iOS'
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Ryu.framework'
 
   s.dependency 'lottie-ios', '3.0.3'
-  s.dependency 'neovmUtils', '1.8.0'
+  s.dependency 'ChainUtils', '1.0.0'
   s.dependency 'PhoneNumberKit', '3.0'
   s.dependency 'GA-SDK-IOS', '2.2.18'
   s.dependency 'FBSDKCoreKit', '5.15.0'
