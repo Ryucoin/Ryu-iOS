@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '2.9.0'
+  s.version          = '2.10.0'
   s.summary          = 'Ryu Games iOS SDK'
 
   s.homepage         = 'https://github.com/RyuGames/Ryu-iOS'
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/RyuGames/Ryu-iOS.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '12.0'
-  s.swift_version = '5.1'
+  s.swift_version = '5.2'
 
   s.vendored_frameworks = 'Ryu.framework'
 
