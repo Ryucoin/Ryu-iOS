@@ -104,6 +104,7 @@ public class RDCConfig {
   public var background: Ryu.RDCBackground
   public var backgroundAnimation: Ryu.RDCBackgroundAnimation
   public var backgroundImage: UIKit.UIImage?
+  public var headerColor: Swift.String
   public var noGameTutorial: Swift.Bool?
   public var noCache: Swift.Bool?
   public var offlineOptions: [Ryu.OfflineOption]
