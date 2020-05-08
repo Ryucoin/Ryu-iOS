@@ -17,7 +17,7 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (3.0.0)
   - PhoneNumberKit/UIKit (3.0.0):
     - PhoneNumberKit/PhoneNumberKitCore
-  - Ryu (2.10.2):
+  - Ryu (2.10.3):
     - ChainUtils (= 1.0.0)
     - FBSDKCoreKit (= 5.15.0)
     - GA-SDK-IOS (= 2.2.18)
@@ -52,7 +52,7 @@ SPEC CHECKSUMS:
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
   NetworkUtils: 98e59b40bcd0cb1c2ecf6f12e66348c2d068b588
   PhoneNumberKit: 86019c972ef6904bcad11b46a6b8a91184d51117
-  Ryu: 1caf2394d7a9d3351424ae7b53ab3c86e7d9491d
+  Ryu: ea6961db02352037f787bf77b13215e81ab7f1a1
   Stripe: 03313f9520a0786e2c00d9a7a2672c11e08821af
   SwiftPromises: 791aca45ea7a946f5d30163d70fc65a55e96c688
 
