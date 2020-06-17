@@ -27,6 +27,17 @@ import SwiftPromises
 import UIKit
 import UserNotifications
 import WebKit
+public enum PlayButtonType {
+  case cashPlay, options, friends, resume, notAvailable, checkingLocation, practicePlay
+  public static func == (a: Ryu.PlayButtonType, b: Ryu.PlayButtonType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol PlayButtonViewDelegate {
+  func playButtonTapped()
+}
 @_hasMissingDesignatedInitializers public class GameAnalyticsManager {
   public func addProgressionEvent(with progression: GameAnalytics.GAProgressionStatus, progression01: Swift.String, progression02: Swift.String?, progression03: Swift.String?)
   public func addDesignEvent(withEventId eventId: Swift.String, _ value: Foundation.NSNumber? = nil)
@@ -231,6 +242,8 @@ public struct OfflineOption : Swift.Equatable {
   public static func == (a: Ryu.OfflineOption, b: Ryu.OfflineOption) -> Swift.Bool
 }
 public func offlineDidScore(id: Swift.String, score: Swift.Int)
+extension Ryu.PlayButtonType : Swift.Equatable {}
+extension Ryu.PlayButtonType : Swift.Hashable {}
 extension Ryu.RDCError : Swift.Equatable {}
 extension Ryu.RDCError : Swift.Hashable {}
 extension Ryu.RDCBackgroundAnimation : Swift.Equatable {}
