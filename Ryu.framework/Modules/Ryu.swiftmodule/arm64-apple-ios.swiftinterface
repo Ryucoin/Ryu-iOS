@@ -145,17 +145,6 @@ extension String : Ryu.SocketData {
 public typealias AckCallback = ([Any]) -> ()
 public typealias NormalCallback = ([Any], Ryu.SocketAckEmitter) -> ()
 public typealias Post = (msg: Swift.String, completion: (() -> ())?)
-public enum PlayButtonType {
-  case cashPlay, options, friends, resume, notAvailable, checkingLocation, practicePlay
-  public static func == (a: Ryu.PlayButtonType, b: Ryu.PlayButtonType) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
-}
-public protocol PlayButtonViewDelegate {
-  func playButtonTapped()
-}
 @objc final public class SocketAckEmitter : ObjectiveC.NSObject {
   @objc final public var rawEmitView: Ryu.SocketRawAckView {
     @objc get
@@ -405,6 +394,14 @@ public struct RDCBackground {
   public init(gradient: Ryu.RDCGradient)
   public init(solidBackground: Swift.String)
 }
+public enum SkipTutorialButtonPlacement {
+  case topLeft, topRight, bottomLeft, bottomRight
+  public static func == (a: Ryu.SkipTutorialButtonPlacement, b: Ryu.SkipTutorialButtonPlacement) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
 public class RDCConfig {
   public var isDebug: Swift.Bool
   public var disableFriends: Swift.Bool
@@ -427,6 +424,7 @@ public class RDCConfig {
   required public init(gameId: Swift.String, apiKey: Swift.String)
   @objc deinit
 }
+public func addTutorialSkipButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.SkipTutorialButtonPlacement)
 public func rdcStart(config: Ryu.RDCConfig)
 public func rdcStop()
 public func rdcResume()
@@ -861,6 +859,10 @@ public class SSLClientCertificate {
   public init(pkcs12Url: Foundation.URL, importOptions: CoreFoundation.CFDictionary) throws
   @objc deinit
 }
+extension UINavigationController : UIKit.UIGestureRecognizerDelegate {
+  @objc override dynamic open func viewDidLoad()
+  @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
 public let WebsocketDidConnectNotification: Swift.String
 public let WebsocketDidDisconnectNotification: Swift.String
 public let WebsocketDisconnectionErrorKeyName: Swift.String
@@ -1037,8 +1039,6 @@ extension Ryu.SocketIOClientOption : Swift.CustomStringConvertible {}
 extension Ryu.SocketIOStatus : Swift.Equatable {}
 extension Ryu.SocketIOStatus : Swift.Hashable {}
 extension Ryu.SocketIOStatus : Swift.RawRepresentable {}
-extension Ryu.PlayButtonType : Swift.Equatable {}
-extension Ryu.PlayButtonType : Swift.Hashable {}
 extension Ryu.SocketClientEvent : Swift.Equatable {}
 extension Ryu.SocketClientEvent : Swift.Hashable {}
 extension Ryu.SocketClientEvent : Swift.RawRepresentable {}
@@ -1046,6 +1046,8 @@ extension Ryu.RDCError : Swift.Equatable {}
 extension Ryu.RDCError : Swift.Hashable {}
 extension Ryu.RDCBackgroundAnimation : Swift.Equatable {}
 extension Ryu.RDCBackgroundAnimation : Swift.Hashable {}
+extension Ryu.SkipTutorialButtonPlacement : Swift.Equatable {}
+extension Ryu.SkipTutorialButtonPlacement : Swift.Hashable {}
 extension Ryu.rdcRandomTag : Swift.Equatable {}
 extension Ryu.rdcRandomTag : Swift.Hashable {}
 extension Ryu.rdcRandomTag : Swift.RawRepresentable {}

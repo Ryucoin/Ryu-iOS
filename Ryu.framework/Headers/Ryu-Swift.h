@@ -1017,7 +1017,12 @@ SWIFT_CLASS("_TtC3Ryu13SocketRawView")
 
 
 
+@class UIGestureRecognizer;
 
+@interface UINavigationController (SWIFT_EXTENSION(Ryu)) <UIGestureRecognizerDelegate>
+- (void)viewDidLoad;
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 
