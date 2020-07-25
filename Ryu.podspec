@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '2.11.2'
+  s.version          = '2.12.0-alpha.1'
   s.summary          = 'Ryu Games iOS SDK'
 
   s.homepage         = 'https://github.com/RyuGames/Ryu-iOS'
