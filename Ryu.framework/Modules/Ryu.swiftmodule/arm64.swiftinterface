@@ -425,7 +425,10 @@ public class RDCConfig {
   @objc deinit
 }
 public func addTutorialSkipButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.SkipTutorialButtonPlacement)
+@available(*, unavailable, renamed: "rdcStart(_appdelegate:config:)", message: "rdcStart now requires the appdelegate as an argument")
 public func rdcStart(config: Ryu.RDCConfig)
+public func rdcStart(_ appdelegate: UserNotifications.UNUserNotificationCenterDelegate, config: Ryu.RDCConfig)
+public func rdcDidReceiveResponse(response: UserNotifications.UNNotificationResponse, completionHandler: @escaping () -> Swift.Void)
 public func rdcStop()
 public func rdcResume()
 public func rdcStoreToken(deviceToken: Foundation.Data)
@@ -842,10 +845,8 @@ public struct OfflineOption : Swift.Equatable {
   public var gameMode: Swift.String
   public var rules: [Swift.String]
   public var boxColor: Swift.String
-  public var textColor: Swift.String
-  public var buttonColor: Swift.String
-  public var buttonTextColor: Swift.String
-  public init(id: Swift.String, title: Swift.String, gameMode: Swift.String, rules: [Swift.String], boxColor: Swift.String, textColor: Swift.String, buttonColor: Swift.String, buttonTextColor: Swift.String)
+  public var description: Swift.String
+  public init(id: Swift.String, title: Swift.String, gameMode: Swift.String, rules: [Swift.String], boxColor: Swift.String, textColor: Swift.String, buttonColor: Swift.String, buttonTextColor: Swift.String, description: Swift.String)
   public static func == (a: Ryu.OfflineOption, b: Ryu.OfflineOption) -> Swift.Bool
 }
 public func offlineDidScore(id: Swift.String, score: Swift.Int)
