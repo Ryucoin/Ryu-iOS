@@ -849,7 +849,6 @@ public struct OfflineOption : Swift.Equatable {
   public init(id: Swift.String, title: Swift.String, gameMode: Swift.String, rules: [Swift.String], boxColor: Swift.String, textColor: Swift.String, buttonColor: Swift.String, buttonTextColor: Swift.String, description: Swift.String)
   public static func == (a: Ryu.OfflineOption, b: Ryu.OfflineOption) -> Swift.Bool
 }
-public func offlineDidScore(id: Swift.String, score: Swift.Int)
 public struct SSLClientCertificateError : Foundation.LocalizedError {
   public var errorDescription: Swift.String?
 }

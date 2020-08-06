@@ -230,6 +230,8 @@ SWIFT_CLASS("_TtC3Ryu16FoundationStream")
 
 
 
+
+
 /// A class that represents an emit that will request an ack that has not yet been sent.
 /// Call <code>timingOut(after:callback:)</code> to complete the emit
 /// Example:
