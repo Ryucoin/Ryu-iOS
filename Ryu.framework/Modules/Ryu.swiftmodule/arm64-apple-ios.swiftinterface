@@ -3,6 +3,8 @@
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Ryu
 import AVFoundation
 import AdSupport
+import Amplitude
+import AppsFlyerLib
 import ChainUtils
 import CommonCrypto
 import ContactsUI
@@ -402,6 +404,11 @@ public enum SkipTutorialButtonPlacement {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
+public struct AppsFlyerCredentials {
+  public var appsFlyerDevKey: Swift.String
+  public var appsFlyerAppleAppID: Swift.String
+  public init(appsFlyerDevKey: Swift.String, appsFlyerAppleAppID: Swift.String)
+}
 public class RDCConfig {
   public var isDebug: Swift.Bool
   public var disableFriends: Swift.Bool
@@ -420,6 +427,8 @@ public class RDCConfig {
   public var orientation: UIKit.UIInterfaceOrientationMask
   public var gameAnalyticsGameKey: Swift.String?
   public var gameAnalyticsSecretKey: Swift.String?
+  public var appsFlyerCredentials: Ryu.AppsFlyerCredentials?
+  public var amplitudeAPIKey: Swift.String?
   public var forceLogs: Swift.Bool
   required public init(gameId: Swift.String, apiKey: Swift.String)
   @objc deinit
@@ -428,6 +437,7 @@ public func addTutorialSkipButton(_ viewController: UIKit.UIViewController, with
 @available(*, unavailable, renamed: "rdcStart(_appdelegate:config:)", message: "rdcStart now requires the appdelegate as an argument")
 public func rdcStart(config: Ryu.RDCConfig)
 public func rdcStart(_ appdelegate: UserNotifications.UNUserNotificationCenterDelegate, config: Ryu.RDCConfig)
+public func rdcDidBecomeActive()
 public func rdcDidReceiveResponse(response: UserNotifications.UNNotificationResponse, completionHandler: @escaping () -> Swift.Void)
 public func rdcStop()
 public func rdcResume()
