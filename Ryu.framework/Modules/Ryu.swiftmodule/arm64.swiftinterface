@@ -114,6 +114,14 @@ public struct SocketIOClientConfiguration : Swift.ExpressibleByArrayLiteral, Swi
 public protocol ConfigSettable {
   mutating func setConfigs(_ config: Ryu.SocketIOClientConfiguration)
 }
+public let demo1Username: Swift.String
+public var demo1ProfileImage: UIKit.UIImage {
+  get
+}
+public let demo2Username: Swift.String
+public var demo2ProfileImage: UIKit.UIImage {
+  get
+}
 public protocol SocketData {
   func socketRepresentation() throws -> Ryu.SocketData
 }
