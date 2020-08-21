@@ -438,6 +438,8 @@ public class RDCConfig {
   public var appsFlyerCredentials: Ryu.AppsFlyerCredentials?
   public var amplitudeAPIKey: Swift.String?
   public var forceLogs: Swift.Bool
+  public var tabAndNavColor: Swift.String?
+  public var unselectedTabItemTintColor: Swift.String?
   required public init(gameId: Swift.String, apiKey: Swift.String)
   @objc deinit
 }
