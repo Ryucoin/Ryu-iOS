@@ -533,6 +533,20 @@ public enum RDCSubmissionType : Swift.String {
 }
 public func rdcSubmitScore(_ viewController: UIKit.UIViewController, score: Swift.Int, _ customSubmittingView: UIKit.UIView? = nil, labelText: Swift.String? = nil, submissionType: Ryu.RDCSubmissionType = .highestWins, completion: ((Swift.Bool) -> Swift.Void)? = nil)
 public func rdcForceLogout()
+public enum RDCPauseButtonPlacement {
+  case topLeft, topCenter, topRight, middleRight, bottomRight, bottomCenter, bottomLeft, middleLeft
+  public static func == (a: Ryu.RDCPauseButtonPlacement, b: Ryu.RDCPauseButtonPlacement) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol GameViewControllerPauseDelegate {
+  func pauseMenuWillDisplay()
+  func pauseMenuWillHide()
+  func submitScoreFromPauseMenu()
+}
+public func addPauseButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.RDCPauseButtonPlacement, color: UIKit.UIColor, delay: Swift.Int?)
 public protocol SocketEnginePollable : Ryu.SocketEngineSpec {
   var invalidated: Swift.Bool { get }
   var postWait: [Ryu.Post] { get set }
@@ -1076,6 +1090,8 @@ extension Ryu.RDCGradientDirection : Swift.Hashable {}
 extension Ryu.RDCSubmissionType : Swift.Equatable {}
 extension Ryu.RDCSubmissionType : Swift.Hashable {}
 extension Ryu.RDCSubmissionType : Swift.RawRepresentable {}
+extension Ryu.RDCPauseButtonPlacement : Swift.Equatable {}
+extension Ryu.RDCPauseButtonPlacement : Swift.Hashable {}
 extension Ryu.SocketPacket.PacketType : Swift.Equatable {}
 extension Ryu.SocketPacket.PacketType : Swift.Hashable {}
 extension Ryu.SocketPacket.PacketType : Swift.RawRepresentable {}
