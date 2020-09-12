@@ -438,8 +438,11 @@ public class RDCConfig {
   public var appsFlyerCredentials: Ryu.AppsFlyerCredentials?
   public var amplitudeAPIKey: Swift.String?
   public var forceLogs: Swift.Bool
+  public var menuBackgroundMusicTracks: [AVFoundation.AVAudioPlayer]?
   public var tabAndNavColor: Swift.String?
   public var unselectedTabItemTintColor: Swift.String?
+  public var gameLogo: UIKit.UIImage?
+  public var playButtonImage: UIKit.UIImage?
   required public init(gameId: Swift.String, apiKey: Swift.String)
   @objc deinit
 }
@@ -549,6 +552,8 @@ public protocol GameViewControllerPauseDelegate {
   func submitScoreFromPauseMenu()
 }
 public func addPauseButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.RDCPauseButtonPlacement, color: UIKit.UIColor, delay: Swift.Int?)
+public var isRyuMusicEnabled: Swift.Bool
+public var isRyuSoundEffectsEnabled: Swift.Bool
 public protocol SocketEnginePollable : Ryu.SocketEngineSpec {
   var invalidated: Swift.Bool { get }
   var postWait: [Ryu.Post] { get set }
