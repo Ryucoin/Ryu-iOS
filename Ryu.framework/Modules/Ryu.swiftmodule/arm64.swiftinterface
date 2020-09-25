@@ -420,6 +420,7 @@ public struct AppsFlyerCredentials {
 public class RDCConfig {
   public var isDebug: Swift.Bool
   public var disableFriends: Swift.Bool
+  public var isGameFriendsOnly: Swift.Bool
   public var regularFont: Swift.String?
   public var boldFont: Swift.String?
   public var italicizedFont: Swift.String?
