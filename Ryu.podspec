@@ -9,12 +9,12 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/RyuGames/Ryu-iOS.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '12.0'
-  s.swift_version = '5.2'
+  s.swift_version = '5.3'
 
   s.vendored_frameworks = 'Ryu.framework'
 
   s.dependency 'lottie-ios', '3.0.3'
-  s.dependency 'ChainUtils', '1.1.0'
+  s.dependency 'ChainUtils', '2.0.0'
   s.dependency 'PhoneNumberKit', '3.2.0'
   s.dependency 'GA-SDK-IOS', '2.2.18'
   s.dependency 'FBSDKCoreKit', '5.15.0'
