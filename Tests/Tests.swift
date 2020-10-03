@@ -1,7 +1,7 @@
 import XCTest
 import Ryu
 
-class Tests: XCTestCase {
+class Tests: XCTestCase, UNUserNotificationCenterDelegate {
 
     override func setUp() {
         super.setUp()
@@ -14,35 +14,11 @@ class Tests: XCTestCase {
     }
 
     func testStart() {
-        rdcConfig = [
-            "host": RDCHost.dev,
-            "gameId": "<GAME ID>",
-            "apiKey": "<API KEY>"
-        ]
-
-        do {
-            try rdcStart()
-            print("Started RDC")
-        } catch RDCError.InvalidJSON {
-            XCTFail("Invalid RDC json")
-        } catch {
-            XCTFail("Unknown error with RDC Config")
-        }
+        let config = RDCConfig(gameId: "<GAME ID>", apiKey: "<API KEY>")
+        rdcStart(self, config: config)
     }
 
-    func testStartFail() {
-        rdcConfig = [
-            "host": RDCHost.dev,
-            "gameId": "<GAME ID>",
-        ]
-
-        do {
-            try rdcStart()
-            print("Started RDC")
-        } catch RDCError.InvalidJSON {
-            print("Invalid RDC json")
-        } catch {
-            XCTFail("Unknown error with RDC Config")
-        }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        rdcDidReceiveResponse(response: response, completionHandler: completionHandler)
     }
 }
