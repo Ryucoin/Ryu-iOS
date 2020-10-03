@@ -10,25 +10,21 @@ import UIKit
 import Ryu
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        rdcConfig = [
-            "gameId": "<GAME ID>",
-            "apiKey": "<API KEY>",
-        ]
 
-        do {
-            try rdcStart()
-        } catch RDCError.InvalidJSON {
-            print("Invalid RDC json")
-        } catch {
-            print("Unknown error with RDC Config")
-        }
+        let config = RDCConfig(gameId: "<GAME ID>", apiKey: "<API KEY>")
+
+        #if DEBUG
+        config.forceLogs = true
+        #else
+        config.isDebug = false
+        #endif
+        rdcStart(self, config: config)
 
         return true
     }
@@ -51,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        rdcDidBecomeActive()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -59,6 +56,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         rdcStoreToken(deviceToken: deviceToken)
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        rdcSignInFromURL(url, self)
+        return false
+    }
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return rdcOrientationMask
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        rdcDidReceiveResponse(response: response, completionHandler: completionHandler)
     }
 }
 
