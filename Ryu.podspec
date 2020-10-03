@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '2.12.16'
+  s.version          = '2.13.0'
   s.summary          = 'Ryu Games iOS SDK'
 
   s.homepage         = 'https://github.com/RyuGames/Ryu-iOS'
@@ -21,5 +21,8 @@ Pod::Spec.new do |s|
   s.dependency 'Stripe', '19.0.1'
   s.dependency 'AppsFlyerFramework', '5.4.3'
   s.dependency 'Amplitude', '5.1.0'
+
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 end
