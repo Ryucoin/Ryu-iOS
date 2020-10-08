@@ -554,6 +554,11 @@ public protocol GameViewControllerPauseDelegate {
 public func addPauseButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.RDCPauseButtonPlacement, color: UIKit.UIColor, delay: Swift.Int?)
 public var isRyuMusicEnabled: Swift.Bool
 public var isRyuSoundEffectsEnabled: Swift.Bool
+extension AppsFlyerLibDelegate {
+  public func onConversionDataSuccess(_ conversionInfo: [Swift.AnyHashable : Any])
+  public func onConversionDataFail(_ error: Swift.Error)
+  public func onAppOpenAttributionFailure(_ error: Swift.Error)
+}
 public protocol SocketEnginePollable : Ryu.SocketEngineSpec {
   var invalidated: Swift.Bool { get }
   var postWait: [Ryu.Post] { get set }
