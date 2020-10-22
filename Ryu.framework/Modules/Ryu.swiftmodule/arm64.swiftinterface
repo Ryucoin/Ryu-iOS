@@ -563,6 +563,8 @@ public var isRyuSoundEffectsEnabled: Swift.Bool
 }
 public func rdcOnConversionDataSuccess(_ conversionInfo: [Swift.AnyHashable : Any])
 public func rdcOnConversionDataFail(_ error: Swift.Error)
+public func rdcLogStartTutorial()
+public func rdcLogEndTutorial()
 public protocol SocketEnginePollable : Ryu.SocketEngineSpec {
   var invalidated: Swift.Bool { get }
   var postWait: [Ryu.Post] { get set }
