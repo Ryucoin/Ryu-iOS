@@ -188,6 +188,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AppsFlyerLib;
 @import Dispatch;
 @import Foundation;
 @import ObjectiveC;
@@ -271,6 +272,16 @@ SWIFT_CLASS("_TtC3Ryu17RDCViewController")
 - (void)viewWillAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_PROTOCOL("_TtP3Ryu22RyuAttribtuionDelegate_")
+@protocol RyuAttribtuionDelegate <AppsFlyerLibDelegate>
+- (void)onConversionDataSuccess:(NSDictionary * _Nonnull)conversionInfo;
+- (void)onConversionDataFail:(NSError * _Nonnull)error;
+@optional
+- (void)onAppOpenAttribution:(NSDictionary * _Nonnull)attributionData;
+- (void)onAppOpenAttributionFailure:(NSError * _Nonnull)error;
 @end
 
 

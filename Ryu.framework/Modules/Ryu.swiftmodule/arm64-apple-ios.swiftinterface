@@ -420,6 +420,7 @@ public struct AppsFlyerCredentials {
 public class RDCConfig {
   public var isDebug: Swift.Bool
   public var disableFriends: Swift.Bool
+  public var isGameFriendsOnly: Swift.Bool
   public var regularFont: Swift.String?
   public var boldFont: Swift.String?
   public var italicizedFont: Swift.String?
@@ -554,11 +555,14 @@ public protocol GameViewControllerPauseDelegate {
 public func addPauseButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.RDCPauseButtonPlacement, color: UIKit.UIColor, delay: Swift.Int?)
 public var isRyuMusicEnabled: Swift.Bool
 public var isRyuSoundEffectsEnabled: Swift.Bool
-extension AppsFlyerLibDelegate {
-  public func onConversionDataSuccess(_ conversionInfo: [Swift.AnyHashable : Any])
-  public func onConversionDataFail(_ error: Swift.Error)
-  public func onAppOpenAttributionFailure(_ error: Swift.Error)
+@objc public protocol RyuAttribtuionDelegate : AppsFlyerLib.AppsFlyerLibDelegate {
+  @objc override dynamic func onConversionDataSuccess(_ conversionInfo: [Swift.AnyHashable : Any])
+  @objc override dynamic func onConversionDataFail(_ error: Swift.Error)
+  @objc optional override dynamic func onAppOpenAttribution(_ attributionData: [Swift.AnyHashable : Any])
+  @objc optional override dynamic func onAppOpenAttributionFailure(_ error: Swift.Error)
 }
+public func rdcOnConversionDataSuccess(_ conversionInfo: [Swift.AnyHashable : Any])
+public func rdcOnConversionDataFail(_ error: Swift.Error)
 public protocol SocketEnginePollable : Ryu.SocketEngineSpec {
   var invalidated: Swift.Bool { get }
   var postWait: [Ryu.Post] { get set }
