@@ -555,7 +555,7 @@ public protocol GameViewControllerPauseDelegate {
 public func addPauseButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.RDCPauseButtonPlacement, color: UIKit.UIColor, delay: Swift.Int?)
 public var isRyuMusicEnabled: Swift.Bool
 public var isRyuSoundEffectsEnabled: Swift.Bool
-@objc public protocol RyuAttribtuionDelegate : AppsFlyerLib.AppsFlyerLibDelegate {
+@objc public protocol RyuAttributionDelegate : AppsFlyerLib.AppsFlyerLibDelegate {
   @objc override dynamic func onConversionDataSuccess(_ conversionInfo: [Swift.AnyHashable : Any])
   @objc override dynamic func onConversionDataFail(_ error: Swift.Error)
   @objc optional override dynamic func onAppOpenAttribution(_ attributionData: [Swift.AnyHashable : Any])

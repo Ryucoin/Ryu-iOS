@@ -275,8 +275,8 @@ SWIFT_CLASS("_TtC3Ryu17RDCViewController")
 @end
 
 
-SWIFT_PROTOCOL("_TtP3Ryu22RyuAttribtuionDelegate_")
-@protocol RyuAttribtuionDelegate <AppsFlyerLibDelegate>
+SWIFT_PROTOCOL("_TtP3Ryu22RyuAttributionDelegate_")
+@protocol RyuAttributionDelegate <AppsFlyerLibDelegate>
 - (void)onConversionDataSuccess:(NSDictionary * _Nonnull)conversionInfo;
 - (void)onConversionDataFail:(NSError * _Nonnull)error;
 @optional
