@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Ryu
 import AVFoundation
 import AdSupport
@@ -393,10 +393,11 @@ public enum RDCBackgroundAnimation {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public struct RDCGradient {
+public struct RDCGradient : Swift.Decodable {
   public var direction: Ryu.RDCGradientDirection
   public var colors: [Swift.String]
   public init(direction: Ryu.RDCGradientDirection, colors: [Swift.String])
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct RDCBackground {
   public var gradient: Ryu.RDCGradient?
@@ -433,6 +434,8 @@ public class RDCConfig {
   public var offlineOptions: [Ryu.OfflineOption]
   public var loginButtonGradientColor: Swift.String?
   public var loadingCardColor: Swift.String?
+  public var scoringUIView: UIKit.UIView?
+  public var scoringRules: [(Swift.String, Swift.String?)]?
   public var orientation: UIKit.UIInterfaceOrientationMask
   public var gameAnalyticsGameKey: Swift.String?
   public var gameAnalyticsSecretKey: Swift.String?
@@ -447,6 +450,7 @@ public class RDCConfig {
   required public init(gameId: Swift.String, apiKey: Swift.String)
   @objc deinit
 }
+public func showRulesOnStartDemoMatch(_ viewController: UIKit.UIViewController)
 public func addTutorialSkipButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.SkipTutorialButtonPlacement)
 @available(*, unavailable, renamed: "rdcStart(_appdelegate:config:)", message: "rdcStart now requires the appdelegate as an argument")
 public func rdcStart(config: Ryu.RDCConfig)
@@ -508,7 +512,7 @@ public enum RDCBackgroundStyle {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public enum RDCGradientDirection {
+public enum RDCGradientDirection : Swift.String, Swift.Decodable {
   case leftToRight
   case rightToLeft
   case TopToBottom
@@ -517,11 +521,11 @@ public enum RDCGradientDirection {
   case BottomRightToTopLeft
   case TopRightToBottomLeft
   case BottomLeftToTopRight
-  public static func == (a: Ryu.RDCGradientDirection, b: Ryu.RDCGradientDirection) -> Swift.Bool
-  public var hashValue: Swift.Int {
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public func rdcExitMatch(_ viewController: UIKit.UIViewController)
 public var isRyuMatch: Swift.Bool {
@@ -1105,6 +1109,7 @@ extension Ryu.RDCBackgroundStyle : Swift.Equatable {}
 extension Ryu.RDCBackgroundStyle : Swift.Hashable {}
 extension Ryu.RDCGradientDirection : Swift.Equatable {}
 extension Ryu.RDCGradientDirection : Swift.Hashable {}
+extension Ryu.RDCGradientDirection : Swift.RawRepresentable {}
 extension Ryu.RDCSubmissionType : Swift.Equatable {}
 extension Ryu.RDCSubmissionType : Swift.Hashable {}
 extension Ryu.RDCSubmissionType : Swift.RawRepresentable {}
