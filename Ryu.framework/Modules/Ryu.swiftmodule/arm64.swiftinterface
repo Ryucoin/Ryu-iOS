@@ -365,12 +365,12 @@ public var rdcCurrentGameMode: Swift.String {
   get
 }
 public enum RDCError : Swift.Error {
-  case None
-  case ParsingError
-  case InvalidJSON
-  case NetworkError
-  case NoUsernameError
-  case InvalidParams
+  case none
+  case parsingError
+  case invalidJSON
+  case networkError
+  case noUsernameError
+  case invalidParams
   public static func == (a: Ryu.RDCError, b: Ryu.RDCError) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
@@ -385,8 +385,8 @@ public let rdcPortrait: UIKit.UIInterfaceOrientationMask
 public let rdcAllButUpsideDown: UIKit.UIInterfaceOrientationMask
 public let rdcAllOrientations: UIKit.UIInterfaceOrientationMask
 public enum RDCBackgroundAnimation {
-  case None
-  case Circles
+  case none
+  case circles
   public static func == (a: Ryu.RDCBackgroundAnimation, b: Ryu.RDCBackgroundAnimation) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
@@ -486,7 +486,7 @@ public func rdcCacheDelete(key: Swift.String = "", matchId: Swift.String? = rdcM
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public enum rdcRandomTag : Swift.Int {
+public enum RDCRandomTag : Swift.Int {
   case one
   case two
   case three
@@ -499,10 +499,10 @@ public enum rdcRandomTag : Swift.Int {
     get
   }
 }
-public func rdcGetRandomInt(min: Swift.Int, max: Swift.Int, _ tag: Ryu.rdcRandomTag = .one) -> Swift.Int
-public func rdcGetRandomFloat(min: Swift.Float, max: Swift.Float, _ tag: Ryu.rdcRandomTag = .one) -> Swift.Float
+public func rdcGetRandomInt(min: Swift.Int, max: Swift.Int, _ tag: Ryu.RDCRandomTag = .one) -> Swift.Int
+public func rdcGetRandomFloat(min: Swift.Float, max: Swift.Float, _ tag: Ryu.RDCRandomTag = .one) -> Swift.Float
 extension Array {
-  public func rdcRandomElement(_ tag: Ryu.rdcRandomTag = .one) -> Any
+  public func rdcRandomElement(_ tag: Ryu.RDCRandomTag = .one) -> Any
 }
 public enum RDCBackgroundStyle {
   case light, regular, dark
@@ -551,7 +551,7 @@ public enum RDCPauseButtonPlacement {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public protocol GameViewControllerPauseDelegate {
+public protocol GameViewControllerPauseDelegate : AnyObject {
   func pauseMenuWillDisplay()
   func pauseMenuWillHide()
   func submitScoreFromPauseMenu()
@@ -728,6 +728,10 @@ extension SocketEngineWebsocket {
   public func logEvent(name: Swift.String, description: Swift.String)
   @objc deinit
 }
+extension UINavigationController : UIKit.UIGestureRecognizerDelegate {
+  @objc override dynamic open func viewDidLoad()
+  @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
 @objc public protocol SocketEngineClient {
   @objc func engineDidError(reason: Swift.String)
   @objc func engineDidClose(reason: Swift.String)
@@ -832,7 +836,7 @@ extension SocketEngineWebsocket {
 extension SocketEngine {
   public func URLSession(session: Foundation.URLSession, didBecomeInvalidWithError error: Foundation.NSError?)
 }
-public protocol MessageCellDelegate {
+public protocol MessageCellDelegate : AnyObject {
   func messageTapped(indexPath: Foundation.IndexPath)
 }
 public protocol SSLTrustValidator {
@@ -912,10 +916,6 @@ public class SSLClientCertificate {
   convenience public init(pkcs12Url: Foundation.URL, password: Swift.String) throws
   public init(pkcs12Url: Foundation.URL, importOptions: CoreFoundation.CFDictionary) throws
   @objc deinit
-}
-extension UINavigationController : UIKit.UIGestureRecognizerDelegate {
-  @objc override dynamic open func viewDidLoad()
-  @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
 }
 public let WebsocketDidConnectNotification: Swift.String
 public let WebsocketDidDisconnectNotification: Swift.String
@@ -1102,9 +1102,9 @@ extension Ryu.RDCBackgroundAnimation : Swift.Equatable {}
 extension Ryu.RDCBackgroundAnimation : Swift.Hashable {}
 extension Ryu.SkipTutorialButtonPlacement : Swift.Equatable {}
 extension Ryu.SkipTutorialButtonPlacement : Swift.Hashable {}
-extension Ryu.rdcRandomTag : Swift.Equatable {}
-extension Ryu.rdcRandomTag : Swift.Hashable {}
-extension Ryu.rdcRandomTag : Swift.RawRepresentable {}
+extension Ryu.RDCRandomTag : Swift.Equatable {}
+extension Ryu.RDCRandomTag : Swift.Hashable {}
+extension Ryu.RDCRandomTag : Swift.RawRepresentable {}
 extension Ryu.RDCBackgroundStyle : Swift.Equatable {}
 extension Ryu.RDCBackgroundStyle : Swift.Hashable {}
 extension Ryu.RDCGradientDirection : Swift.Equatable {}
