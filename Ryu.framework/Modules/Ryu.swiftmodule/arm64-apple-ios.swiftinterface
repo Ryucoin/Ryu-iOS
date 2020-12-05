@@ -447,6 +447,7 @@ public class RDCConfig {
   public var unselectedTabItemTintColor: Swift.String?
   public var gameLogo: UIKit.UIImage?
   public var playButtonImage: UIKit.UIImage?
+  public var mid: Swift.String?
   required public init(gameId: Swift.String, apiKey: Swift.String)
   @objc deinit
 }
@@ -891,9 +892,9 @@ public enum SocketAckStatus : Swift.String {
   @objc override dynamic public init()
 }
 public struct RDCApplePayConfig : Swift.Codable {
-  public var devId: Swift.String
-  public var prodId: Swift.String
-  public init(devId: Swift.String, prodId: Swift.String)
+  public var devId: Swift.String?
+  public var prodId: Swift.String?
+  public init(devId: Swift.String?, prodId: Swift.String?)
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -906,6 +907,16 @@ public struct OfflineOption : Swift.Equatable {
   public var description: Swift.String
   public init(id: Swift.String, title: Swift.String, gameMode: Swift.String, rules: [Swift.String], boxColor: Swift.String, textColor: Swift.String, buttonColor: Swift.String, buttonTextColor: Swift.String, description: Swift.String)
   public static func == (a: Ryu.OfflineOption, b: Ryu.OfflineOption) -> Swift.Bool
+}
+public var currentScreenState: Ryu.ScreenNavigationState
+public enum ScreenNavigationState {
+  case Ryu
+  case Game
+  public static func == (a: Ryu.ScreenNavigationState, b: Ryu.ScreenNavigationState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
 }
 public struct SSLClientCertificateError : Foundation.LocalizedError {
   public var errorDescription: Swift.String?
@@ -1126,6 +1137,8 @@ extension Ryu.SocketEnginePacketType : Swift.RawRepresentable {}
 extension Ryu.SocketAckStatus : Swift.Equatable {}
 extension Ryu.SocketAckStatus : Swift.Hashable {}
 extension Ryu.SocketAckStatus : Swift.RawRepresentable {}
+extension Ryu.ScreenNavigationState : Swift.Equatable {}
+extension Ryu.ScreenNavigationState : Swift.Hashable {}
 extension Ryu.CloseCode : Swift.Equatable {}
 extension Ryu.CloseCode : Swift.Hashable {}
 extension Ryu.CloseCode : Swift.RawRepresentable {}
