@@ -1,7 +1,7 @@
 import XCTest
 import Ryu
 
-class Tests: XCTestCase, UNUserNotificationCenterDelegate {
+class Tests: XCTestCase {
 
     override func setUp() {
         super.setUp()
@@ -13,12 +13,7 @@ class Tests: XCTestCase, UNUserNotificationCenterDelegate {
         super.tearDown()
     }
 
-    func testStart() {
-        let config = RDCConfig(gameId: "<GAME ID>", apiKey: "<API KEY>")
-        rdcStart(self, config: config)
-    }
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        rdcDidReceiveResponse(response: response, completionHandler: completionHandler)
+    func testConfig() {
+        let _ = RDCConfig(gameId: "<GAME ID>", apiKey: "<API KEY>")
     }
 }

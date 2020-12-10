@@ -11,4 +11,3 @@ install:
 script:
 - pod lib lint --verbose
 - xcodebuild clean build test -workspace Ryu.xcworkspace -scheme Ryu-Example -destination 'platform=iOS Simulator,name=iPhone 8,OS=14.0' -sdk iphonesimulator14.0 CODE_SIGNING_REQUIRED=NO -configuration Debug ONLY_ACTIVE_ARCH=YES ENABLE_TESTABILITY=YES -enableCodeCoverage YES | xcpretty -c
-- xcodebuild build test -workspace Ryu.xcworkspace -scheme Example -destination 'platform=iOS Simulator,name=iPhone 8,OS=14.0' -sdk iphonesimulator14.0 CODE_SIGNING_REQUIRED=NO -configuration Debug ONLY_ACTIVE_ARCH=YES ENABLE_TESTABILITY=YES -enableCodeCoverage YES | xcpretty -c
