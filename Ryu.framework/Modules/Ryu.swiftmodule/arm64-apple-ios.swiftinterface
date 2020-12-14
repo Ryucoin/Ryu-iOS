@@ -557,6 +557,7 @@ public protocol GameViewControllerPauseDelegate : AnyObject {
   func pauseMenuWillHide()
   func submitScoreFromPauseMenu()
 }
+public func addRDCTimer(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.RDCPauseButtonPlacement, color: UIKit.UIColor, duration: Foundation.TimeInterval, elapsed: Foundation.TimeInterval)
 public func addPauseButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.RDCPauseButtonPlacement, color: UIKit.UIColor, delay: Swift.Int?)
 public var isRyuMusicEnabled: Swift.Bool
 public var isRyuSoundEffectsEnabled: Swift.Bool
