@@ -922,6 +922,7 @@ public enum ScreenNavigationState {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
+public func pausedTappedOnGame(_ gameViewController: UIKit.UIViewController)
 public struct SSLClientCertificateError : Foundation.LocalizedError {
   public var errorDescription: Swift.String?
 }
