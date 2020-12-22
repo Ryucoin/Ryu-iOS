@@ -916,6 +916,7 @@ public var currentScreenState: Ryu.ScreenNavigationState
 public enum ScreenNavigationState {
   case Ryu
   case Game
+  case Loading
   public static func == (a: Ryu.ScreenNavigationState, b: Ryu.ScreenNavigationState) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
