@@ -535,6 +535,9 @@ public var isRyuMatch: Swift.Bool {
 public var rdcGameType: Swift.String {
   get
 }
+public var willShowPrematchOverlay: Swift.Bool {
+  get
+}
 public var isRyuTutorial: Swift.Bool
 public enum RDCSubmissionType : Swift.String {
   case highestWins
