@@ -532,6 +532,9 @@ public func rdcExitMatch(_ viewController: UIKit.UIViewController)
 public var isRyuMatch: Swift.Bool {
   get
 }
+public var rdcGameType: Swift.String {
+  get
+}
 public var isRyuTutorial: Swift.Bool
 public enum RDCSubmissionType : Swift.String {
   case highestWins
