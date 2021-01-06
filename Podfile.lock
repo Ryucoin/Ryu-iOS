@@ -3,30 +3,30 @@ PODS:
   - AppsFlyerFramework (6.0.4)
   - ChainUtils (2.0.0):
     - NetworkUtils (= 2.0.0)
-  - FBSDKCoreKit (5.15.0):
-    - FBSDKCoreKit/Basics (= 5.15.0)
-    - FBSDKCoreKit/Core (= 5.15.0)
-  - FBSDKCoreKit/Basics (5.15.0)
-  - FBSDKCoreKit/Core (5.15.0):
+  - FBSDKCoreKit (8.2.0):
+    - FBSDKCoreKit/Basics (= 8.2.0)
+    - FBSDKCoreKit/Core (= 8.2.0)
+  - FBSDKCoreKit/Basics (8.2.0)
+  - FBSDKCoreKit/Core (8.2.0):
     - FBSDKCoreKit/Basics
-  - GA-SDK-IOS (2.2.18)
+  - GA-SDK-IOS (4.4.6)
   - lottie-ios (3.0.3)
   - NetworkUtils (2.0.0):
     - SwiftPromises (= 2.0.0)
-  - PhoneNumberKit (3.2.0):
-    - PhoneNumberKit/PhoneNumberKitCore (= 3.2.0)
-    - PhoneNumberKit/UIKit (= 3.2.0)
-  - PhoneNumberKit/PhoneNumberKitCore (3.2.0)
-  - PhoneNumberKit/UIKit (3.2.0):
+  - PhoneNumberKit (3.3.1):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.3.1)
+    - PhoneNumberKit/UIKit (= 3.3.1)
+  - PhoneNumberKit/PhoneNumberKitCore (3.3.1)
+  - PhoneNumberKit/UIKit (3.3.1):
     - PhoneNumberKit/PhoneNumberKitCore
-  - Ryu (2.14.9):
+  - Ryu (2.14.10):
     - Amplitude (= 5.1.0)
     - AppsFlyerFramework (= 6.0.4)
     - ChainUtils (= 2.0.0)
-    - FBSDKCoreKit (= 5.15.0)
-    - GA-SDK-IOS (= 2.2.18)
+    - FBSDKCoreKit (= 8.2.0)
+    - GA-SDK-IOS (= 4.4.6)
     - lottie-ios (= 3.0.3)
-    - PhoneNumberKit (= 3.2.0)
+    - PhoneNumberKit (= 3.3.1)
     - Stripe (= 19.0.1)
   - Stripe (19.0.1)
   - SwiftPromises (2.0.0)
@@ -55,12 +55,12 @@ SPEC CHECKSUMS:
   Amplitude: 1d3d18f82ba9852011aa7b9a741eac616d78fa82
   AppsFlyerFramework: acc30e47ea49a058f4bb9b43cf00e976fd80d1ed
   ChainUtils: 37de125024fc1c5fc82556efaacabe1a16e81e22
-  FBSDKCoreKit: 083ba8c8e37939c0b4c84250654c9be0aef0c2f8
-  GA-SDK-IOS: 2fe41f7279f9647d4a76fd4acfe26c67b887375c
+  FBSDKCoreKit: 4afd6ff53d8133a433dbcda44451c9498f8c6ce4
+  GA-SDK-IOS: d97fb5946bfdc775816f8d834c3b294b65578ad7
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
   NetworkUtils: 67433676b1254314c6df0131c35ce25fbd7eb675
-  PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
-  Ryu: 2b31d2d3cbf0dd64995035bdbc0f3672015e66c8
+  PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
+  Ryu: fe1211b85040178b6d888f145904dcf51b194d2e
   Stripe: 03313f9520a0786e2c00d9a7a2672c11e08821af
   SwiftPromises: 9dcac22fad4fd7221fe413d69682228cde84a9a1
 
