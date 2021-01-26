@@ -118,10 +118,6 @@ public let demo1Username: Swift.String
 public var demo1ProfileImage: UIKit.UIImage {
   get
 }
-public let demo2Username: Swift.String
-public var demo2ProfileImage: UIKit.UIImage {
-  get
-}
 public protocol SocketData {
   func socketRepresentation() throws -> Ryu.SocketData
 }
@@ -361,6 +357,9 @@ public var rdcHighScoreForOfflineMatch: Swift.Int {
 public var rdcCurrentUser: Swift.String? {
   get
 }
+public var userProfilePicture: Swift.String {
+  get
+}
 public var rdcCurrentGameMode: Swift.String {
   get
 }
@@ -441,6 +440,7 @@ public class RDCConfig {
   public var gameAnalyticsSecretKey: Swift.String?
   public var appsFlyerCredentials: Ryu.AppsFlyerCredentials?
   public var amplitudeAPIKey: Swift.String?
+  public var hideOverlayOnFirstMatch: Swift.Bool?
   public var forceLogs: Swift.Bool
   public var menuBackgroundMusicTracks: [AVFoundation.AVAudioPlayer]?
   public var tabAndNavColor: Swift.String?
@@ -549,7 +549,10 @@ public enum RDCSubmissionType : Swift.String {
   }
 }
 public func rdcSubmitScore(_ viewController: UIKit.UIViewController, score: Swift.Int, _ customSubmittingView: UIKit.UIView? = nil, labelText: Swift.String? = nil, submissionType: Ryu.RDCSubmissionType = .highestWins, completion: ((Swift.Bool) -> Swift.Void)? = nil)
-public func rdcForceLogout()
+public func getPearlStoreItems() -> Swift.String
+public func hasPurchased(itemId: Swift.String) -> Swift.Bool
+public func itemName(itemId: Swift.String) -> Swift.String
+public func itemCost(itemId: Swift.String) -> Swift.Int
 public enum RDCPauseButtonPlacement {
   case topLeft, topCenter, topRight, middleRight, bottomRight, bottomCenter, bottomLeft, middleLeft
   public static func == (a: Ryu.RDCPauseButtonPlacement, b: Ryu.RDCPauseButtonPlacement) -> Swift.Bool
@@ -579,7 +582,7 @@ public func rdcOnConversionDataSuccess(_ conversionInfo: [Swift.AnyHashable : An
 public func rdcOnConversionDataFail(_ error: Swift.Error)
 public func rdcLogStartTutorial()
 public func rdcLogEndTutorial()
-public func rdcDidGameStart(_ viewController: UIKit.UIViewController, selector: ObjectiveC.Selector)
+public func rdcDidGameStart(_ viewController: UIKit.UIViewController, selector: ObjectiveC.Selector?)
 public protocol SocketEnginePollable : Ryu.SocketEngineSpec {
   var invalidated: Swift.Bool { get }
   var postWait: [Ryu.Post] { get set }
