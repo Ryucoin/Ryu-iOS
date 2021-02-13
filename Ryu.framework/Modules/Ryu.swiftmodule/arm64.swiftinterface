@@ -26,7 +26,6 @@ import QuartzCore
 import SafariServices
 import Security
 import StoreKit
-import Stripe
 import Swift
 import SwiftPromises
 import UIKit
@@ -430,6 +429,7 @@ public class RDCConfig {
   public var headerColor: Swift.String
   public var noGameTutorial: Swift.Bool?
   public var noCache: Swift.Bool?
+  public var gameNeedsLandscape: Swift.Bool?
   public var offlineOptions: [Ryu.OfflineOption]
   public var loginButtonGradientColor: Swift.String?
   public var loadingCardColor: Swift.String?
