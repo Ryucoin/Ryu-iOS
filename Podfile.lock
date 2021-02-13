@@ -19,7 +19,7 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (3.3.1)
   - PhoneNumberKit/UIKit (3.3.1):
     - PhoneNumberKit/PhoneNumberKitCore
-  - Ryu (2.15.7):
+  - Ryu (2.15.8):
     - Amplitude (= 5.1.0)
     - AppsFlyerFramework (= 6.0.4)
     - ChainUtils (= 2.0.0)
@@ -27,8 +27,6 @@ PODS:
     - GA-SDK-IOS (= 4.4.6)
     - lottie-ios (= 3.1.9)
     - PhoneNumberKit (= 3.3.1)
-    - Stripe (= 19.0.1)
-  - Stripe (19.0.1)
   - SwiftPromises (2.0.0)
 
 DEPENDENCIES:
@@ -44,7 +42,6 @@ SPEC REPOS:
     - lottie-ios
     - NetworkUtils
     - PhoneNumberKit
-    - Stripe
     - SwiftPromises
 
 EXTERNAL SOURCES:
@@ -60,8 +57,7 @@ SPEC CHECKSUMS:
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   NetworkUtils: 67433676b1254314c6df0131c35ce25fbd7eb675
   PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
-  Ryu: 5113a08530813cb3f1763eb4c028aceddd2bd501
-  Stripe: 03313f9520a0786e2c00d9a7a2672c11e08821af
+  Ryu: a21e0738a52a318038d7120b50a25d0f8773c334
   SwiftPromises: 9dcac22fad4fd7221fe413d69682228cde84a9a1
 
 PODFILE CHECKSUM: f648276db3a6770995eece9b79eb7c8178c1c532
