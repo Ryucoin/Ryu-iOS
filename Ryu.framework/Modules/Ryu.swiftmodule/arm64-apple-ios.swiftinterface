@@ -445,6 +445,8 @@ public class RDCConfig {
   public var menuBackgroundMusicTracks: [AVFoundation.AVAudioPlayer]?
   public var tabAndNavColor: Swift.String?
   public var unselectedTabItemTintColor: Swift.String?
+  public var appTeamId: Swift.String?
+  public var appGroup: Swift.String?
   public var gameLogo: UIKit.UIImage?
   public var playButtonImage: UIKit.UIImage?
   public var mid: Swift.String?
