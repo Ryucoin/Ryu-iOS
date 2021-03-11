@@ -907,13 +907,6 @@ public enum SocketAckStatus : Swift.String {
   @objc deinit
   @objc override dynamic public init()
 }
-public struct RDCApplePayConfig : Swift.Codable {
-  public var devId: Swift.String?
-  public var prodId: Swift.String?
-  public init(devId: Swift.String?, prodId: Swift.String?)
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
-}
 public struct OfflineOption : Swift.Equatable {
   public var id: Swift.String
   public var title: Swift.String
