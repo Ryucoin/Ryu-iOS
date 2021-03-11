@@ -1,6 +1,8 @@
 PODS:
   - Amplitude (5.1.0)
-  - AppsFlyerFramework (6.0.4)
+  - AppsFlyerFramework (6.2.3):
+    - AppsFlyerFramework/Main (= 6.2.3)
+  - AppsFlyerFramework/Main (6.2.3)
   - ChainUtils (2.0.0):
     - NetworkUtils (= 2.0.0)
   - FBSDKCoreKit (8.2.0):
@@ -19,9 +21,9 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (3.3.1)
   - PhoneNumberKit/UIKit (3.3.1):
     - PhoneNumberKit/PhoneNumberKitCore
-  - Ryu (2.15.12):
+  - Ryu (2.15.13):
     - Amplitude (= 5.1.0)
-    - AppsFlyerFramework (= 6.0.4)
+    - AppsFlyerFramework (= 6.2.3)
     - ChainUtils (= 2.0.0)
     - FBSDKCoreKit (= 8.2.0)
     - GA-SDK-IOS (= 4.4.6)
@@ -50,14 +52,14 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Amplitude: 1d3d18f82ba9852011aa7b9a741eac616d78fa82
-  AppsFlyerFramework: acc30e47ea49a058f4bb9b43cf00e976fd80d1ed
+  AppsFlyerFramework: cf5205e8a851188b29561f49f5bca72797cf823e
   ChainUtils: 37de125024fc1c5fc82556efaacabe1a16e81e22
   FBSDKCoreKit: 4afd6ff53d8133a433dbcda44451c9498f8c6ce4
   GA-SDK-IOS: d97fb5946bfdc775816f8d834c3b294b65578ad7
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   NetworkUtils: 67433676b1254314c6df0131c35ce25fbd7eb675
   PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
-  Ryu: 6b847c3b4c13c1775082b00d69b0046134904f6a
+  Ryu: 00828a661b4814c035189304022741c6d18f29df
   SwiftPromises: 9dcac22fad4fd7221fe413d69682228cde84a9a1
 
 PODFILE CHECKSUM: f648276db3a6770995eece9b79eb7c8178c1c532
