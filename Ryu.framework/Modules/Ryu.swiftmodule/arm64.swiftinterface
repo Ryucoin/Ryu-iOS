@@ -7,13 +7,13 @@ import Amplitude
 import AppsFlyerLib
 import ChainUtils
 import CommonCrypto
+import Connect
 import ContactsUI
 import CoreFoundation
 import CoreLocation
 import Dispatch
 import FBSDKCoreKit
 import Foundation
-import GameAnalytics
 import GameKit
 import LocalAuthentication
 import Lottie
@@ -249,11 +249,6 @@ public typealias Post = (msg: Swift.String, completion: (() -> ())?)
   func removeSocket(_ socket: Ryu.SocketIOClient) -> Ryu.SocketIOClient?
   @objc func socket(forNamespace nsp: Swift.String) -> Ryu.SocketIOClient
 }
-@_hasMissingDesignatedInitializers public class GameAnalyticsManager {
-  public func addProgressionEvent(with progression: GameAnalytics.GAProgressionStatus, progression01: Swift.String, progression02: Swift.String?, progression03: Swift.String?)
-  public func addDesignEvent(withEventId eventId: Swift.String, _ value: Foundation.NSNumber? = nil)
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers final public class RDCViewController : UIKit.UIViewController {
   @objc override final public func viewDidLoad()
   @objc override final public func viewWillAppear(_ animated: Swift.Bool)
@@ -353,7 +348,10 @@ public var rdcIsOfflineMatch: Swift.Bool {
 public var rdcHighScoreForOfflineMatch: Swift.Int {
   get
 }
-public var rdcCurrentUser: Swift.String? {
+public var rdcCurrentUsername: Swift.String? {
+  get
+}
+public var rdcCurrentAddress: Swift.String? {
   get
 }
 public var userProfilePicture: Swift.String {
@@ -375,7 +373,6 @@ public enum RDCError : Swift.Error {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public let rdcGameAnalyticsManager: Ryu.GameAnalyticsManager
 public let rdcFacebookAnalyticsManager: Ryu.FacebookAnalyticsManager
 public var rdcOrientationMask: UIKit.UIInterfaceOrientationMask
 public let rdcLandscape: UIKit.UIInterfaceOrientationMask
@@ -419,7 +416,6 @@ public struct AppsFlyerCredentials {
 public class RDCConfig {
   public var isDebug: Swift.Bool
   public var isTestingBuild: Swift.Bool
-  public var disableFriends: Swift.Bool
   public var isGameFriendsOnly: Swift.Bool
   public var regularFont: Swift.String?
   public var boldFont: Swift.String?
@@ -432,13 +428,9 @@ public class RDCConfig {
   public var noCache: Swift.Bool?
   public var gameNeedsLandscape: Swift.Bool?
   public var offlineOptions: [Ryu.OfflineOption]
-  public var loginButtonGradientColor: Swift.String?
   public var loadingCardColor: Swift.String?
   public var scoringUIView: UIKit.UIView?
-  public var scoringRules: [(Swift.String, Swift.String?)]?
   public var orientation: UIKit.UIInterfaceOrientationMask
-  public var gameAnalyticsGameKey: Swift.String?
-  public var gameAnalyticsSecretKey: Swift.String?
   public var appsFlyerCredentials: Ryu.AppsFlyerCredentials?
   public var amplitudeAPIKey: Swift.String?
   public var hideOverlayOnFirstMatch: Swift.Bool?
@@ -454,7 +446,6 @@ public class RDCConfig {
   required public init(gameId: Swift.String, apiKey: Swift.String)
   @objc deinit
 }
-public func showRulesOnStartDemoMatch(_ viewController: UIKit.UIViewController)
 public func addTutorialSkipButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.SkipTutorialButtonPlacement)
 @available(*, unavailable, renamed: "rdcStart(_appdelegate:config:)", message: "rdcStart now requires the appdelegate as an argument")
 public func rdcStart(config: Ryu.RDCConfig)
