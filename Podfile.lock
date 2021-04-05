@@ -21,7 +21,7 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (3.3.1)
   - PhoneNumberKit/UIKit (3.3.1):
     - PhoneNumberKit/PhoneNumberKitCore
-  - Ryu (2.16.1):
+  - Ryu (2.16.2):
     - Amplitude (= 5.1.0)
     - AppsFlyerFramework (= 6.2.3)
     - ChainUtils (= 2.0.0)
@@ -59,7 +59,7 @@ SPEC CHECKSUMS:
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   NetworkUtils: 67433676b1254314c6df0131c35ce25fbd7eb675
   PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
-  Ryu: 74508750d0064c3f7e313fc5122072981a898694
+  Ryu: 35de63de91a3f49d46c084864fec15304f5b463b
   SwiftPromises: 9dcac22fad4fd7221fe413d69682228cde84a9a1
 
 PODFILE CHECKSUM: f648276db3a6770995eece9b79eb7c8178c1c532
