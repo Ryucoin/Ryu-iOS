@@ -434,6 +434,7 @@ public class RDCConfig {
   public var appsFlyerCredentials: Ryu.AppsFlyerCredentials?
   public var amplitudeAPIKey: Swift.String?
   public var hideOverlayOnFirstMatch: Swift.Bool?
+  public var hideOverlayAlways: Swift.Bool?
   public var forceLogs: Swift.Bool
   public var menuBackgroundMusicTracks: [AVFoundation.AVAudioPlayer]?
   public var tabAndNavColor: Swift.String?
