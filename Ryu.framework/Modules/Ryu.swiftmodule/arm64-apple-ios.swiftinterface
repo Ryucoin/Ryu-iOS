@@ -11,6 +11,7 @@ import Connect
 import ContactsUI
 import CoreFoundation
 import CoreLocation
+import Delighted
 import Dispatch
 import FBSDKCoreKit
 import Foundation
