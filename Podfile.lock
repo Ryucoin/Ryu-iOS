@@ -5,6 +5,8 @@ PODS:
   - AppsFlyerFramework/Main (6.2.3)
   - ChainUtils (2.0.0):
     - NetworkUtils (= 2.0.0)
+  - Delighted (1.0.2):
+    - Starscream (~> 3.1.1)
   - FBSDKCoreKit (8.2.0):
     - FBSDKCoreKit/Basics (= 8.2.0)
     - FBSDKCoreKit/Core (= 8.2.0)
@@ -21,14 +23,16 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (3.3.1)
   - PhoneNumberKit/UIKit (3.3.1):
     - PhoneNumberKit/PhoneNumberKitCore
-  - Ryu (2.16.4):
+  - Ryu (2.16.5):
     - Amplitude (= 5.1.0)
     - AppsFlyerFramework (= 6.2.3)
     - ChainUtils (= 2.0.0)
+    - Delighted (= 1.0.2)
     - FBSDKCoreKit (= 8.2.0)
     - FinicityConnect (= 1.3.1)
     - lottie-ios (= 3.1.9)
     - PhoneNumberKit (= 3.3.1)
+  - Starscream (3.1.1)
   - SwiftPromises (2.0.0)
 
 DEPENDENCIES:
@@ -39,11 +43,13 @@ SPEC REPOS:
     - Amplitude
     - AppsFlyerFramework
     - ChainUtils
+    - Delighted
     - FBSDKCoreKit
     - FinicityConnect
     - lottie-ios
     - NetworkUtils
     - PhoneNumberKit
+    - Starscream
     - SwiftPromises
 
 EXTERNAL SOURCES:
@@ -54,12 +60,14 @@ SPEC CHECKSUMS:
   Amplitude: 1d3d18f82ba9852011aa7b9a741eac616d78fa82
   AppsFlyerFramework: cf5205e8a851188b29561f49f5bca72797cf823e
   ChainUtils: 37de125024fc1c5fc82556efaacabe1a16e81e22
+  Delighted: 18175b766c2e029d8d42ad2de4fb36a6cdadf5c7
   FBSDKCoreKit: 4afd6ff53d8133a433dbcda44451c9498f8c6ce4
   FinicityConnect: f02439ef1b7c80275d17e33569ff1c415a547519
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   NetworkUtils: 67433676b1254314c6df0131c35ce25fbd7eb675
   PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
-  Ryu: 4a5f63b11f0d1ec3edacc323b9cfe1afaece67a6
+  Ryu: 928dc5383b99b7c8c62901249de776175f657b73
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftPromises: 9dcac22fad4fd7221fe413d69682228cde84a9a1
 
 PODFILE CHECKSUM: f648276db3a6770995eece9b79eb7c8178c1c532
