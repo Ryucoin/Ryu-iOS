@@ -579,6 +579,8 @@ public func rdcOnConversionDataFail(_ error: Swift.Error)
 public func rdcLogStartTutorial()
 public func rdcLogEndTutorial()
 public func rdcDidGameStart(_ viewController: UIKit.UIViewController, selector: ObjectiveC.Selector?)
+public func gameDidStopSecurity()
+public func gameDidStartSecurity(_ gameViewController: UIKit.UIViewController)
 public protocol SocketEnginePollable : Ryu.SocketEngineSpec {
   var invalidated: Swift.Bool { get }
   var postWait: [Ryu.Post] { get set }
@@ -899,6 +901,9 @@ public enum SocketAckStatus : Swift.String {
   public func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool
   @objc deinit
   @objc override dynamic public init()
+}
+extension UIView {
+  public func asImageBackground(viewLayer: QuartzCore.CALayer, viewBounds: CoreGraphics.CGRect) -> UIKit.UIImage
 }
 public struct OfflineOption : Swift.Equatable {
   public var id: Swift.String

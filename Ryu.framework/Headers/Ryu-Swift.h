@@ -1034,6 +1034,7 @@ SWIFT_CLASS("_TtC3Ryu13SocketRawView")
 
 
 
+
 SWIFT_CLASS("_TtC3Ryu9WebSocket")
 @interface WebSocket : NSObject <NSStreamDelegate>
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
