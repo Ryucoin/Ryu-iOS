@@ -309,6 +309,7 @@ public enum SocketClientEvent : Swift.String {
   }
   public init?(rawValue: Swift.String)
 }
+public func addImageToMovie(image: UIKit.UIImage, matchId: Swift.String)
 @objc public protocol SocketEngineSpec {
   @objc var client: Ryu.SocketEngineClient? { get set }
   @objc var closed: Swift.Bool { get }
