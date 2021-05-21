@@ -454,7 +454,7 @@ public class RDCConfig {
 public func addTutorialSkipButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.SkipTutorialButtonPlacement)
 @available(*, unavailable, renamed: "rdcStart(_appdelegate:config:)", message: "rdcStart now requires the appdelegate as an argument")
 public func rdcStart(config: Ryu.RDCConfig)
-public func rdcStart(_ appdelegate: UserNotifications.UNUserNotificationCenterDelegate, config: Ryu.RDCConfig)
+public func rdcStart(_ appdelegate: UserNotifications.UNUserNotificationCenterDelegate, configs: [Ryu.RDCConfig])
 public func rdcDidBecomeActive()
 public func rdcDidReceiveResponse(response: UserNotifications.UNNotificationResponse, completionHandler: @escaping () -> Swift.Void)
 public func rdcStop()
