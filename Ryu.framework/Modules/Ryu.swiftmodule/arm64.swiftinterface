@@ -350,6 +350,9 @@ public var rdcIsOfflineMatch: Swift.Bool {
 public var rdcHighScoreForOfflineMatch: Swift.Int {
   get
 }
+public var rdcCurrentGameId: Swift.String {
+  get
+}
 public var rdcCurrentUsername: Swift.String? {
   get
 }
