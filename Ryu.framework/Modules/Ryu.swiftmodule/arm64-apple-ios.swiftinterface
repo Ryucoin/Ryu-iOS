@@ -250,9 +250,36 @@ public typealias Post = (msg: Swift.String, completion: (() -> ())?)
   func removeSocket(_ socket: Ryu.SocketIOClient) -> Ryu.SocketIOClient?
   @objc func socket(forNamespace nsp: Swift.String) -> Ryu.SocketIOClient
 }
+@objc public protocol ReloadSceneDelegate : AnyObject {
+  @objc func reloadScene()
+}
+public func setReloadSceneDelegate(delegate: Ryu.ReloadSceneDelegate)
 @objc @_inheritsConvenienceInitializers final public class RDCViewController : UIKit.UIViewController {
   @objc override final public func viewDidLoad()
   @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public var isPlayingUnityGame: Swift.Bool
+public var isSubmittingScoreFromUnity: Swift.Bool
+@objc @_inheritsConvenienceInitializers open class RyuGameViewController : UIKit.UIViewController {
+  @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic open var preferredScreenEdgesDeferringSystemGestures: UIKit.UIRectEdge {
+    @objc get
+  }
+  @objc override dynamic open func viewDidLoad()
+  @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @objc open func didLoad()
+  @objc open func start()
+  @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  open func refresh()
+  open func clearCache()
+  open func addUnityView()
+  @objc open func submitScore(_ notification: Foundation.NSNotification)
+  @objc open func exitGame()
   @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -457,7 +484,7 @@ public class RDCConfig {
 public func addTutorialSkipButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.SkipTutorialButtonPlacement)
 @available(*, unavailable, renamed: "rdcStart(_appdelegate:config:)", message: "rdcStart now requires the appdelegate as an argument")
 public func rdcStart(config: Ryu.RDCConfig)
-public func rdcStart(_ appdelegate: UserNotifications.UNUserNotificationCenterDelegate, configs: [Ryu.RDCConfig])
+public func rdcStart(_ appdelegate: Ryu.RyuAppDelegate, configs: [Ryu.RDCConfig])
 public func rdcDidBecomeActive()
 public func rdcDidReceiveResponse(response: UserNotifications.UNNotificationResponse, completionHandler: @escaping () -> Swift.Void)
 public func rdcStop()
@@ -574,7 +601,7 @@ public func addRDCTimer(_ viewController: UIKit.UIViewController, withPlacement 
 public func addPauseButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.RDCPauseButtonPlacement, color: UIKit.UIColor, delay: Swift.Int?)
 public var isRyuMusicEnabled: Swift.Bool
 public var isRyuSoundEffectsEnabled: Swift.Bool
-@objc public protocol RyuAttributionDelegate : AppsFlyerLib.AppsFlyerLibDelegate {
+@objc public protocol RyuSDKDelegate : AppsFlyerLib.AppsFlyerLibDelegate, Ryu.ReloadSceneDelegate, UserNotifications.UNUserNotificationCenterDelegate {
   @objc override dynamic func onConversionDataSuccess(_ conversionInfo: [Swift.AnyHashable : Any])
   @objc override dynamic func onConversionDataFail(_ error: Swift.Error)
   @objc optional override dynamic func onAppOpenAttribution(_ attributionData: [Swift.AnyHashable : Any])
@@ -734,6 +761,23 @@ extension SocketParsable where Self : Ryu.SocketDataBufferable, Self : Ryu.Socke
   @objc open func removeSocket(_ socket: Ryu.SocketIOClient) -> Ryu.SocketIOClient?
   open func setConfigs(_ config: Ryu.SocketIOClientConfiguration)
   @objc open func socket(forNamespace nsp: Swift.String) -> Ryu.SocketIOClient
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers open class RyuAppDelegate : UIKit.UIResponder, UIKit.UIApplicationDelegate, Ryu.RyuSDKDelegate {
+  @objc open func onConversionDataSuccess(_ conversionInfo: [Swift.AnyHashable : Any])
+  @objc open func onConversionDataFail(_ error: Swift.Error)
+  @objc open func reloadScene()
+  @objc open func application(_ application: UIKit.UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Foundation.Data)
+  @objc open func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
+  @objc open func application(_ application: UIKit.UIApplication, supportedInterfaceOrientationsFor window: UIKit.UIWindow?) -> UIKit.UIInterfaceOrientationMask
+  @objc open func application(_ app: UIKit.UIApplication, open url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any] = [:]) -> Swift.Bool
+  @objc open func application(_ application: UIKit.UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Swift.Error)
+  @objc open func applicationWillTerminate(_ application: UIKit.UIApplication)
+  @objc open func applicationWillResignActive(_ application: UIKit.UIApplication)
+  @objc open func applicationDidEnterBackground(_ application: UIKit.UIApplication)
+  @objc open func applicationWillEnterForeground(_ application: UIKit.UIApplication)
+  @objc open func applicationDidBecomeActive(_ application: UIKit.UIApplication)
+  @objc deinit
   @objc override dynamic public init()
 }
 public protocol SocketEngineWebsocket : Ryu.SocketEngineSpec {

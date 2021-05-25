@@ -193,6 +193,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
+@import UserNotifications;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -275,14 +276,61 @@ SWIFT_CLASS("_TtC3Ryu17RDCViewController")
 @end
 
 
-SWIFT_PROTOCOL("_TtP3Ryu22RyuAttributionDelegate_")
-@protocol RyuAttributionDelegate <AppsFlyerLibDelegate>
+SWIFT_PROTOCOL("_TtP3Ryu19ReloadSceneDelegate_")
+@protocol ReloadSceneDelegate
+- (void)reloadScene;
+@end
+
+
+SWIFT_PROTOCOL("_TtP3Ryu14RyuSDKDelegate_")
+@protocol RyuSDKDelegate <AppsFlyerLibDelegate, ReloadSceneDelegate, UNUserNotificationCenterDelegate>
 - (void)onConversionDataSuccess:(NSDictionary * _Nonnull)conversionInfo;
 - (void)onConversionDataFail:(NSError * _Nonnull)error;
 @optional
 - (void)onAppOpenAttribution:(NSDictionary * _Nonnull)attributionData;
 - (void)onAppOpenAttributionFailure:(NSError * _Nonnull)error;
 @end
+
+@class UIApplication;
+@class UNUserNotificationCenter;
+@class UNNotificationResponse;
+@class UIWindow;
+
+SWIFT_CLASS("_TtC3Ryu14RyuAppDelegate")
+@interface RyuAppDelegate : UIResponder <RyuSDKDelegate, UIApplicationDelegate>
+- (void)onConversionDataSuccess:(NSDictionary * _Nonnull)conversionInfo;
+- (void)onConversionDataFail:(NSError * _Nonnull)error;
+- (void)reloadScene;
+- (void)application:(UIApplication * _Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
+- (void)userNotificationCenter:(UNUserNotificationCenter * _Nonnull)center didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response withCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (UIInterfaceOrientationMask)application:(UIApplication * _Nonnull)application supportedInterfaceOrientationsForWindow:(UIWindow * _Nullable)window SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)application:(UIApplication * _Nonnull)app openURL:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
+- (void)application:(UIApplication * _Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
+- (void)applicationWillTerminate:(UIApplication * _Nonnull)application;
+- (void)applicationWillResignActive:(UIApplication * _Nonnull)application;
+- (void)applicationDidEnterBackground:(UIApplication * _Nonnull)application;
+- (void)applicationWillEnterForeground:(UIApplication * _Nonnull)application;
+- (void)applicationDidBecomeActive:(UIApplication * _Nonnull)application;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSNotification;
+
+SWIFT_CLASS("_TtC3Ryu21RyuGameViewController")
+@interface RyuGameViewController : UIViewController
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+@property (nonatomic, readonly) UIRectEdge preferredScreenEdgesDeferringSystemGestures;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)didLoad;
+- (void)start;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)submitScore:(NSNotification * _Nonnull)notification;
+- (void)exitGame;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 
 /// A wrapper around Starscream’s SSLSecurity that provides a minimal Objective-C interface.
