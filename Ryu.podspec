@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '2.16.11-alpha.5'
+  s.version          = '2.16.11-alpha.7'
   s.summary          = 'Ryu Games iOS SDK'
 
   s.homepage         = 'https://github.com/RyuGames/Ryu-iOS'
@@ -13,14 +13,14 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = 'Ryu.framework'
 
-  s.dependency 'lottie-ios', '3.1.9'
+  s.dependency 'lottie-ios', '3.2.3'
   s.dependency 'ChainUtils', '2.0.1'
-  s.dependency 'PhoneNumberKit', '3.3.1'
-  s.dependency 'FBSDKCoreKit', '8.2.0'
-  s.dependency 'AppsFlyerFramework', '6.2.3'
-  s.dependency 'Amplitude', '5.1.0'
+  s.dependency 'PhoneNumberKit', '3.3.3'
+  s.dependency 'FBSDKCoreKit', '11.0.0'
+  s.dependency 'AppsFlyerFramework', '6.3.1'
+  s.dependency 'Amplitude', '8.3.0'
   s.dependency 'FinicityConnect', '1.3.1'
-  s.dependency 'Delighted', "1.0.2"
+  s.dependency 'Delighted', "1.0.3"
 
 
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }

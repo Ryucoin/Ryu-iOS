@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Ryu
 import AVFoundation
 import AdSupport
@@ -70,8 +70,8 @@ public enum SocketIOClientOption {
   public var description: Swift.String {
     get
   }
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -161,8 +161,8 @@ public typealias Post = (msg: Swift.String, completion: (() -> ())?)
   public init(socket: Ryu.SocketIOClient, ackNum: Swift.Int)
   final public func with(_ items: Ryu.SocketData...)
   @objc final public func with(_ items: [Any])
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers final public class OnAckCallback : ObjectiveC.NSObject {
   @objc deinit
@@ -226,7 +226,7 @@ public typealias Post = (msg: Swift.String, completion: (() -> ())?)
   @objc open func setReconnecting(reason: Swift.String)
   @objc override dynamic public init()
 }
-@objc public protocol SocketManagerSpec : AnyObject, Ryu.SocketEngineClient {
+@objc public protocol SocketManagerSpec : Ryu.SocketEngineClient {
   @objc var defaultSocket: Ryu.SocketIOClient { get }
   @objc var engine: Ryu.SocketEngineSpec? { get set }
   @objc var forceNew: Swift.Bool { get set }
@@ -250,16 +250,16 @@ public typealias Post = (msg: Swift.String, completion: (() -> ())?)
   func removeSocket(_ socket: Ryu.SocketIOClient) -> Ryu.SocketIOClient?
   @objc func socket(forNamespace nsp: Swift.String) -> Ryu.SocketIOClient
 }
-@objc public protocol ReloadSceneDelegate : AnyObject {
+@objc public protocol ReloadSceneDelegate {
   @objc func reloadScene()
 }
 public func setReloadSceneDelegate(delegate: Ryu.ReloadSceneDelegate)
 @objc @_inheritsConvenienceInitializers final public class RDCViewController : UIKit.UIViewController {
   @objc override final public func viewDidLoad()
   @objc override final public func viewWillAppear(_ animated: Swift.Bool)
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 public var isPlayingUnityGame: Swift.Bool
 public var isSubmittingScoreFromUnity: Swift.Bool
@@ -280,9 +280,9 @@ public var isSubmittingScoreFromUnity: Swift.Bool
   open func addUnityView()
   @objc open func submitScore(_ notification: Foundation.NSNotification)
   @objc open func exitGame()
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 public protocol SocketIOClientSpec : AnyObject {
   var anyHandler: ((Ryu.SocketAnyEvent) -> ())? { get }
@@ -330,11 +330,11 @@ public enum SocketClientEvent : Swift.String {
   case reconnectAttempt
   case statusChange
   case websocketUpgrade
+  public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
-  public init?(rawValue: Swift.String)
 }
 public func addImageToMovie(image: UIKit.UIImage, matchId: Swift.String)
 @objc public protocol SocketEngineSpec {
@@ -400,10 +400,10 @@ public enum RDCError : Swift.Error {
   case noUsernameError
   case invalidParams
   public static func == (a: Ryu.RDCError, b: Ryu.RDCError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public let rdcFacebookAnalyticsManager: Ryu.FacebookAnalyticsManager
 public var rdcOrientationMask: UIKit.UIInterfaceOrientationMask
@@ -415,10 +415,10 @@ public enum RDCBackgroundAnimation {
   case none
   case circles
   public static func == (a: Ryu.RDCBackgroundAnimation, b: Ryu.RDCBackgroundAnimation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public struct RDCGradient : Swift.Decodable {
   public var direction: Ryu.RDCGradientDirection
@@ -435,10 +435,10 @@ public struct RDCBackground {
 public enum SkipTutorialButtonPlacement {
   case topLeft, topRight, bottomLeft, bottomRight
   public static func == (a: Ryu.SkipTutorialButtonPlacement, b: Ryu.SkipTutorialButtonPlacement) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public struct AppsFlyerCredentials {
   public var appsFlyerDevKey: Swift.String
@@ -470,7 +470,7 @@ public class RDCConfig {
   public var hideOverlayOnFirstMatch: Swift.Bool?
   public var hideOverlayAlways: Swift.Bool?
   public var forceLogs: Swift.Bool
-  public var menuBackgroundMusicTracks: [AVFoundation.AVAudioPlayer]?
+  public var menuBackgroundMusicTracks: [AVFAudio.AVAudioPlayer]?
   public var tabAndNavColor: Swift.String?
   public var unselectedTabItemTintColor: Swift.String?
   public var appTeamId: Swift.String?
@@ -502,19 +502,19 @@ public func rdcCacheDelete(key: Swift.String = "", matchId: Swift.String? = rdcM
   public var scores: [Swift.String : Swift.Int]
   public var currentPlayer: Swift.String
   public init(scores: [Swift.String : Swift.Int], currentPlayer: Swift.String)
-  @objc deinit
   @objc override dynamic public init()
-  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 @objc public class RDCTimedGame : ObjectiveC.NSObject, Swift.Codable {
   public var timeRemaining: Swift.Double
   public var score: Swift.Int
   public init(timeRemaining: Swift.Double, score: Swift.Int)
-  @objc deinit
   @objc override dynamic public init()
-  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 public enum RDCRandomTag : Swift.Int {
   case one
@@ -523,8 +523,8 @@ public enum RDCRandomTag : Swift.Int {
   case four
   case five
   case six
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -537,10 +537,10 @@ extension Array {
 public enum RDCBackgroundStyle {
   case light, regular, dark
   public static func == (a: Ryu.RDCBackgroundStyle, b: Ryu.RDCBackgroundStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum RDCGradientDirection : Swift.String, Swift.Decodable {
   case leftToRight
@@ -551,8 +551,8 @@ public enum RDCGradientDirection : Swift.String, Swift.Decodable {
   case BottomRightToTopLeft
   case TopRightToBottomLeft
   case BottomLeftToTopRight
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -571,8 +571,8 @@ public var isRyuTutorial: Swift.Bool
 public enum RDCSubmissionType : Swift.String {
   case highestWins
   case lowestWins
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -585,10 +585,10 @@ public func itemCost(itemId: Swift.String) -> Swift.Int
 public enum RDCPauseButtonPlacement {
   case topLeft, topCenter, topRight, middleRight, bottomRight, bottomCenter, bottomLeft, middleLeft
   public static func == (a: Ryu.RDCPauseButtonPlacement, b: Ryu.RDCPauseButtonPlacement) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public protocol GameViewControllerPauseDelegate : AnyObject {
   func pauseMenuWillDisplay()
@@ -664,8 +664,8 @@ extension SocketPacket {
     public var isBinary: Swift.Bool {
       get
     }
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -689,10 +689,10 @@ public enum SocketParsableError : Swift.Error {
   case invalidPacket
   case invalidPacketType
   public static func == (a: Ryu.SocketParsableError, b: Ryu.SocketParsableError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public protocol SocketDataBufferable : AnyObject {
   var waitingPackets: [Ryu.SocketPacket] { get set }
@@ -709,11 +709,11 @@ extension SocketParsable where Self : Ryu.SocketDataBufferable, Self : Ryu.Socke
   case message
   case upgrade
   case noop
+  public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
 @objc open class SocketManager : ObjectiveC.NSObject, Ryu.SocketManagerSpec, Ryu.SocketParsable, Ryu.SocketDataBufferable, Ryu.ConfigSettable {
   @objc public var defaultSocket: Ryu.SocketIOClient {
@@ -777,8 +777,8 @@ extension SocketParsable where Self : Ryu.SocketDataBufferable, Self : Ryu.Socke
   @objc open func applicationDidEnterBackground(_ application: UIKit.UIApplication)
   @objc open func applicationWillEnterForeground(_ application: UIKit.UIApplication)
   @objc open func applicationDidBecomeActive(_ application: UIKit.UIApplication)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public protocol SocketEngineWebsocket : Ryu.SocketEngineSpec {
   func sendWebSocketMessage(_ str: Swift.String, withType type: Ryu.SocketEnginePacketType, withData datas: [Foundation.Data], completion: (() -> ())?)
@@ -938,8 +938,8 @@ extension SocketLogger {
 }
 public enum SocketAckStatus : Swift.String {
   case noAck
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -949,8 +949,8 @@ public enum SocketAckStatus : Swift.String {
   @objc convenience public init(usePublicKeys: Swift.Bool = true)
   convenience public init(certs: [Ryu.SSLCert], usePublicKeys: Swift.Bool)
   public func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension UIView {
   public func asImageBackground(viewLayer: QuartzCore.CALayer, viewBounds: CoreGraphics.CGRect) -> UIKit.UIImage
@@ -965,16 +965,20 @@ public struct OfflineOption : Swift.Equatable {
   public init(id: Swift.String, title: Swift.String, gameMode: Swift.String, rules: [Swift.String], boxColor: Swift.String, textColor: Swift.String, buttonColor: Swift.String, buttonTextColor: Swift.String, description: Swift.String)
   public static func == (a: Ryu.OfflineOption, b: Ryu.OfflineOption) -> Swift.Bool
 }
+@objc @_inheritsConvenienceInitializers public class KeychainManager : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
 public var currentScreenState: Ryu.ScreenNavigationState
 public enum ScreenNavigationState {
   case Ryu
   case Game
   case Loading
   public static func == (a: Ryu.ScreenNavigationState, b: Ryu.ScreenNavigationState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public func pausedTappedOnGame(_ gameViewController: UIKit.UIViewController)
 public struct SSLClientCertificateError : Foundation.LocalizedError {
@@ -999,8 +1003,8 @@ public enum CloseCode : Swift.UInt16 {
   case encoding
   case policyViolated
   case messageTooBig
-  public typealias RawValue = Swift.UInt16
   public init?(rawValue: Swift.UInt16)
+  public typealias RawValue = Swift.UInt16
   public var rawValue: Swift.UInt16 {
     get
   }
@@ -1014,10 +1018,10 @@ public enum ErrorType : Swift.Error {
   case upgradeError
   case closeError
   public static func == (a: Ryu.ErrorType, b: Ryu.ErrorType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public struct WSError : Swift.Error {
   public let type: Ryu.ErrorType
@@ -1077,8 +1081,8 @@ public protocol WSStream {
   public func cleanup()
   public func sslTrust() -> (trust: Security.SecTrust?, domain: Swift.String?)
   @objc open func stream(_ aStream: Foundation.Stream, handle eventCode: Foundation.Stream.Event)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public protocol WebSocketDelegate : AnyObject {
   func websocketDidConnect(socket: Ryu.WebSocketClient)
@@ -1105,8 +1109,8 @@ public protocol WebSocketAdvancedDelegate : AnyObject {
     case connectionClose
     case ping
     case pong
-    public typealias RawValue = Swift.UInt8
     public init?(rawValue: Swift.UInt8)
+    public typealias RawValue = Swift.UInt8
     public var rawValue: Swift.UInt8 {
       get
     }
