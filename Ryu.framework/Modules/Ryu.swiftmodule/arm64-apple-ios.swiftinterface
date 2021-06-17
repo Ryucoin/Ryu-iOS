@@ -445,42 +445,6 @@ public struct AppsFlyerCredentials {
   public var appsFlyerAppleAppID: Swift.String
   public init(appsFlyerDevKey: Swift.String, appsFlyerAppleAppID: Swift.String)
 }
-public class RDCConfig {
-  public var isDebug: Swift.Bool
-  public var isTestingBuild: Swift.Bool
-  public var canRecord: Swift.Bool
-  public var gameIsNotUnity: Swift.Bool
-  public var isGameFriendsOnly: Swift.Bool
-  public var regularFont: Swift.String?
-  public var boldFont: Swift.String?
-  public var italicizedFont: Swift.String?
-  public var background: Ryu.RDCBackground
-  public var backgroundAnimation: Ryu.RDCBackgroundAnimation
-  public var backgroundImage: UIKit.UIImage?
-  public var headerColor: Swift.String
-  public var noGameTutorial: Swift.Bool?
-  public var noCache: Swift.Bool?
-  public var gameNeedsLandscape: Swift.Bool?
-  public var offlineOptions: [Ryu.OfflineOption]
-  public var loadingCardColor: Swift.String?
-  public var scoringUIView: UIKit.UIView?
-  public var orientation: UIKit.UIInterfaceOrientationMask
-  public var appsFlyerCredentials: Ryu.AppsFlyerCredentials?
-  public var amplitudeAPIKey: Swift.String?
-  public var hideOverlayOnFirstMatch: Swift.Bool?
-  public var hideOverlayAlways: Swift.Bool?
-  public var forceLogs: Swift.Bool
-  public var menuBackgroundMusicTracks: [AVFAudio.AVAudioPlayer]?
-  public var tabAndNavColor: Swift.String?
-  public var unselectedTabItemTintColor: Swift.String?
-  public var appTeamId: Swift.String?
-  public var appGroup: Swift.String?
-  public var gameLogo: UIKit.UIImage?
-  public var playButtonImage: UIKit.UIImage?
-  public var mid: Swift.String?
-  required public init(gameId: Swift.String, apiKey: Swift.String)
-  @objc deinit
-}
 public func addTutorialSkipButton(_ viewController: UIKit.UIViewController, withPlacement placement: Ryu.SkipTutorialButtonPlacement)
 @available(*, unavailable, renamed: "rdcStart(_appdelegate:config:)", message: "rdcStart now requires the appdelegate as an argument")
 public func rdcStart(config: Ryu.RDCConfig)
@@ -897,6 +861,42 @@ extension UINavigationController : UIKit.UIGestureRecognizerDelegate {
 }
 extension SocketEngine {
   public func URLSession(session: Foundation.URLSession, didBecomeInvalidWithError error: Foundation.NSError?)
+}
+public class RDCConfig {
+  public var isDebug: Swift.Bool
+  public var isTestingBuild: Swift.Bool
+  public var canRecord: Swift.Bool
+  public var gameIsNotUnity: Swift.Bool
+  public var isGameFriendsOnly: Swift.Bool
+  public var regularFont: Swift.String?
+  public var boldFont: Swift.String?
+  public var italicizedFont: Swift.String?
+  public var background: Ryu.RDCBackground
+  public var backgroundAnimation: Ryu.RDCBackgroundAnimation
+  public var backgroundImage: UIKit.UIImage?
+  public var headerColor: Swift.String
+  public var noGameTutorial: Swift.Bool?
+  public var gameNeedsLandscape: Swift.Bool?
+  public var offlineCanCache: Swift.Bool
+  public var offlineOptions: [Ryu.OfflineOption]
+  public var loadingCardColor: Swift.String?
+  public var scoringUIView: UIKit.UIView?
+  public var orientation: UIKit.UIInterfaceOrientationMask
+  public var appsFlyerCredentials: Ryu.AppsFlyerCredentials?
+  public var amplitudeAPIKey: Swift.String?
+  public var hideOverlayOnFirstMatch: Swift.Bool?
+  public var hideOverlayAlways: Swift.Bool?
+  public var forceLogs: Swift.Bool
+  public var menuBackgroundMusicTracks: [AVFAudio.AVAudioPlayer]?
+  public var tabAndNavColor: Swift.String?
+  public var unselectedTabItemTintColor: Swift.String?
+  public var appTeamId: Swift.String?
+  public var appGroup: Swift.String?
+  public var gameLogo: UIKit.UIImage?
+  public var playButtonImage: UIKit.UIImage?
+  public var mid: Swift.String?
+  required public init(gameId: Swift.String, apiKey: Swift.String)
+  @objc deinit
 }
 public protocol MessageCellDelegate : AnyObject {
   func messageTapped(indexPath: Foundation.IndexPath)
