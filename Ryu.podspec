@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Ryu'
-  s.version          = '2.16.11-alpha.8'
+  s.version          = '2.16.11'
   s.summary          = 'Ryu Games iOS SDK'
 
   s.homepage         = 'https://github.com/RyuGames/Ryu-iOS'
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.dependency 'AppsFlyerFramework', '6.3.1'
   s.dependency 'Amplitude', '8.3.0'
   s.dependency 'FinicityConnect', '1.3.1'
-  s.dependency 'Delighted', "1.0.3"
+  s.dependency 'Delighted', "1.1.0"
 
 
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
